@@ -4,7 +4,8 @@
     "description": "Cuento digital interactivo con chatbot educativo offline para comprensión lectora infantil",
     "main": "inicio.html",
     "scripts": {
-        "start": "http-server -p ${PORT:-8080} -a 0.0.0.0 -c-1 --cors",
+        "start": "node server.js",
+        "start:http-server": "http-server -p ${PORT:-8080} -a 0.0.0.0 -c-1 --cors",
         "serve": "http-server -p 8080 -c-1",
         "build": "echo 'PWA lista para despliegue'",
         "railway:deploy": "npm start",
@@ -32,9 +33,6 @@
     "author": "Proyecto Hipólito",
     "license": "MIT",
     "devDependencies": {
-        "http-server": "^14.1.1"
-    },
-    "dependencies": {
         "http-server": "^14.1.1"
     },
     "optionalDependencies": {

@@ -7,8 +7,8 @@ WORKDIR /app
 # Copiar package.json
 COPY package*.json ./
 
-# Instalar dependencias (incluye http-server)
-RUN npm ci
+# Solo necesitamos las dependencias básicas (sin http-server)
+RUN npm ci --only=production
 
 # Copiar todos los archivos de la aplicación
 COPY . .
@@ -16,5 +16,5 @@ COPY . .
 # Exponer puerto
 EXPOSE 8080
 
-# Comando para iniciar la aplicación
+# Comando para iniciar la aplicación con servidor nativo
 CMD ["npm", "start"]
