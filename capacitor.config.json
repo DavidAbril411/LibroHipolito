@@ -1,0 +1,27 @@
+{
+    "appId": "com.hipolito.educativo",
+    "appName": "Hipólito Chat Educativo",
+    "webDir": ".",
+    "bundledWebRuntime": false,
+    "plugins": {
+        "SplashScreen": {
+            "launchShowDuration": 2000,
+            "backgroundColor": "#74b9ff",
+            "androidSplashResourceName": "splash",
+            "androidScaleType": "CENTER_CROP",
+            "showSpinner": false
+        },
+        "StatusBar": {
+            "style": "LIGHT_CONTENT",
+            "backgroundColor": "#74b9ff"
+        }
+    },
+    "android": {
+        "allowMixedContent": true,
+        "backgroundColor": "#74b9ff",
+        "webContentsDebuggingEnabled": true
+    },
+    "server": {
+        "androidScheme": "https"
+    }
+}

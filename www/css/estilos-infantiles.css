@@ -1,0 +1,414 @@
+/* ==============================================
+   🎨 ESTILOS PARA CHAT INFANTIL - BOTONES GRANDES Y COLORIDOS
+   ============================================== */
+
+.chat-botones-grandes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+.boton-grande {
+    background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+    border: none;
+    color: white;
+    padding: 25px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.boton-grande:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #e84393 0%, #f39c12 100%);
+}
+
+.boton-grande:active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Botones de acción específicos */
+.boton-chat {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+}
+
+.boton-chat:hover {
+    background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+}
+
+.boton-cuento {
+    background: linear-gradient(135deg, #55efc4 0%, #00b894 100%);
+}
+
+.boton-cuento:hover {
+    background: linear-gradient(135deg, #00a085 0%, #00b3b3 100%);
+}
+
+.boton-ayuda {
+    background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+}
+
+.boton-ayuda:hover {
+    background: linear-gradient(135deg, #5f3dc4 0%, #7048e8 100%);
+}
+
+/* ==============================================
+   📱 INTERFAZ MÓVIL MEJORADA
+   ============================================== */
+
+@media (max-width: 768px) {
+    .chat-botones-grandes {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .boton-grande {
+        font-size: 1.1rem;
+        padding: 20px;
+        min-height: 70px;
+    }
+}
+
+/* ==============================================
+   🎯 INDICADORES DE ESTADO MEJORADOS
+   ============================================== */
+
+.estado-hipolito {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.estado-hipolito.despierto {
+    background: linear-gradient(135deg, #d1ecf1 0%, #c3e9ff 100%);
+    color: #0c5460;
+    border: 2px solid #bee5eb;
+}
+
+.estado-hipolito.dormido {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+}
+
+.estado-hipolito.conectando {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    color: #856404;
+    border: 2px solid #ffeaa7;
+}
+
+/* Animación para estado conectando */
+.estado-hipolito.conectando::before {
+    content: "🔄";
+    animation: rotar 2s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes rotar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==============================================
+   🎨 TEMAS DE COLOR PERSONALIZABLES
+   ============================================== */
+
+:root {
+    --color-primario: #74b9ff;
+    --color-secundario: #fd79a8;
+    --color-acento: #00b894;
+    --color-fondo: #f8f9fa;
+    --color-texto: #2d3436;
+    --sombra-principal: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --radio-borde: 15px;
+}
+
+.tema-noche {
+    --color-fondo: #2d3436;
+    --color-texto: #ddd;
+    --color-primario: #6c5ce7;
+    --color-secundario: #fd79a8;
+}
+
+.tema-alto-contraste {
+    --color-fondo: #000;
+    --color-texto: #fff;
+    --color-primario: #00f;
+    --color-secundario: #ff0;
+}
+
+/* ==============================================
+   🔤 TIPOGRAFÍA AMIGABLE PARA NIÑOS
+   ============================================== */
+
+.texto-infantil {
+    font-family: 'Comic Sans MS', 'Trebuchet MS', cursive, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--color-texto);
+}
+
+.texto-grande {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.texto-emoji {
+    font-size: 2rem;
+    margin: 0 5px;
+}
+
+/* ==============================================
+   🎵 ANIMACIONES DIVERTIDAS
+   ============================================== */
+
+.rebote {
+    animation: rebote 0.6s ease-in-out;
+}
+
+@keyframes rebote {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.brillar {
+    animation: brillar 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes brillar {
+    from {
+        opacity: 0.7;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.pulso {
+    animation: pulso 2s ease-in-out infinite;
+}
+
+@keyframes pulso {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ==============================================
+   🏆 INDICADORES DE PROGRESO GAMIFICADOS
+   ============================================== */
+
+.progreso-divertido {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+    border-radius: 20px;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: var(--sombra-principal);
+}
+
+.barra-progreso-gamificada {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progreso-fill-gamificado {
+    background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+    height: 100%;
+    border-radius: 15px;
+    transition: width 0.8s ease;
+    position: relative;
+}
+
+.progreso-fill-gamificado::after {
+    content: "🏆";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+}
+
+/* ==============================================
+   🎪 EFECTOS VISUALES ESPECIALES
+   ============================================== */
+
+.efecto-neon {
+    box-shadow:
+        0 0 5px var(--color-primario),
+        0 0 10px var(--color-primario),
+        0 0 15px var(--color-primario);
+    animation: brillar 2s ease-in-out infinite alternate;
+}
+
+.efecto-flotante {
+    animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.marco-magico {
+    border: 3px solid transparent;
+    background:
+        linear-gradient(white, white) padding-box,
+        linear-gradient(45deg, #fd79a8, #fdcb6e, #74b9ff, #00b894) border-box;
+    border-radius: var(--radio-borde);
+}
+
+/* ==============================================
+   📚 ESTILOS PARA CONTENIDO EDUCATIVO
+   ============================================== */
+
+.tarjeta-personaje {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: var(--sombra-principal);
+    border-left: 5px solid var(--color-acento);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-personaje:hover {
+    transform: translateX(5px);
+}
+
+.nombre-personaje {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--color-acento);
+    margin-bottom: 10px;
+}
+
+.descripcion-personaje {
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* ==============================================
+   🎮 CONTROLES DE JUEGO MEJORADOS
+   ============================================== */
+
+.panel-controles {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: var(--sombra-principal);
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.boton-control {
+    background: var(--color-primario);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.boton-control:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.boton-control:active {
+    transform: translateY(0);
+}
+
+/* ==============================================
+   🌈 MEJORAS DE ACCESIBILIDAD
+   ============================================== */
+
+/* Modo alto contraste */
+@media (prefers-contrast: high) {
+    :root {
+        --color-fondo: #000;
+        --color-texto: #fff;
+        --color-primario: #00f;
+        --color-secundario: #ff0;
+    }
+}
+
+/* Reducir movimiento para usuarios sensibles */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Texto más grande para usuarios con problemas de visión */
+@media (min-width: 1200px) {
+    .accesibilidad-alta {
+        font-size: 1.5rem;
+    }
+
+    .boton-grande {
+        min-height: 100px;
+        font-size: 1.5rem;
+    }
+}

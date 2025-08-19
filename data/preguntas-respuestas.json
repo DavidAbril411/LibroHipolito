@@ -1,0 +1,209 @@
+{
+    "preguntasEspecificas": {
+        "1": {
+            "pregunta": "¿Por qué se llama Hipólito, mi perro dragón?",
+            "respuestaBasica": "Porque la historia es sobre Hipólito y su regreso a su lugar de origen.",
+            "respuestaCompleta": "Se llama 'Hipólito, mi perro dragón' porque Hipólito es el personaje principal de la historia. Sara y Benjamín eligieron ese nombre cuando lo adoptaron, ya que les parecía perfecto para un perro-dragón de alas blancas con destellos dorados. El título también nos cuenta que esta es la historia de Hipólito y su viaje de regreso a su hogar en las Siete Islas.",
+            "respuestaAvanzada": "El título tiene un significado especial. 'Hipólito' es el nombre que Sara y Benjamín le dieron al perro-dragón, y 'mi perro dragón' muestra la relación especial entre los niños y Hipólito. El título nos adelanta que esta es una historia personal sobre el vínculo entre los protagonistas y sobre el viaje de Hipólito para encontrar sus raíces en la Antigua República de las Siete Islas, donde nacieron todos los perros-dragón.",
+            "vocabulario": ["protagonista", "origen", "perro-dragón"],
+            "conceptosClaves": ["identidad", "hogar", "aventura"]
+        },
+        "2": {
+            "pregunta": "¿Qué clase de animal es Hipólito?",
+            "respuestaBasica": "Es un perro dragón nieto de Falkor (dragón blanco de la historia sin fin).",
+            "respuestaCompleta": "Hipólito es un perro-dragón, una criatura mágica que tiene características tanto de perro como de dragón. Tiene alas blancas con destellos dorados, patas grandes para aterrizar después de volar, cara de viejito sabio pero con la energía de un cachorro. Es nieto de Falkor, el famoso dragón blanco de 'La Historia Sin Fin', e hijo de Anaris.",
+            "respuestaAvanzada": "Hipólito pertenece a una raza especial llamada 'perros-dragón' que habita en el Islote de las Siete Islas. Estos animales mágicos tienen la lealtad y cariño de los perros, pero también pueden volar gracias a sus grandes alas. Hipólito es descendiente de una familia noble: es nieto de Falkor (el dragón de la suerte de 'La Historia Sin Fin') e hijo de Anaris. Cuando ladra, su voz lleva el eco de todos sus ancestros, y sus ojos marrones a veces se vuelven del color del fuego con destellos dorados.",
+            "vocabulario": [
+                "perro-dragón",
+                "ancestros",
+                "criatura mágica",
+                "descendiente"
+            ],
+            "conceptosClaves": ["herencia familiar", "magia", "identidad"]
+        },
+        "3": {
+            "pregunta": "¿Cómo se llaman los otros dos protagonistas?",
+            "respuestaBasica": "Benjamín y Sara.",
+            "respuestaCompleta": "Los otros dos protagonistas son Benjamín y Sara, que son hermanos. Ellos son quienes encontraron a Hipólito en la puerta de su casa durante un día de lluvia y decidieron adoptarlo. Sara es quien propuso el nombre 'Hipólito' y Benjamín estuvo de acuerdo. Juntos forman un equipo de aventureros que ayuda a Hipólito a descubrir su origen.",
+            "respuestaAvanzada": "Benjamín y Sara son hermanos protagonistas que viven en la ciudad de Córdoba. Sara parece ser muy observadora y creativa (fue quien sugirió el nombre perfecto para Hipólito), mientras que Benjamín es curioso y valiente (acepta las aventuras y toma decisiones importantes). Ambos demuestran ser cariñosos y responsables al adoptar a Hipólito, y lo acompañan en su búsqueda para descubrir de dónde viene. Su relación fraternal es importante en la historia porque trabajan juntos para cuidar y ayudar a su mascota mágica.",
+            "vocabulario": ["protagonistas", "hermanos", "aventureros"],
+            "conceptosClaves": ["amistad", "familia", "trabajo en equipo"]
+        },
+        "4": {
+            "pregunta": "¿Cómo se llaman los antagonistas?",
+            "respuestaBasica": "Iscarotes.",
+            "respuestaCompleta": "Los antagonistas se llaman Iscarotes. Son los malvados que gobiernan las Siete Islas con un régimen totalitario. Los Iscarotes son devotos del sol y del fuego destructor, y fueron quienes destruyeron el paraíso de las islas al extraer carbón, convirtiendo a los perros-dragón en esclavos y arruinando el medio ambiente.",
+            "respuestaAvanzada": "Los Iscarotes son los villanos principales de la historia. Su nombre deriva de 'Iscariote' (como Judas Iscariote, el traidor), lo que ya nos indica que son personajes negativos. Estos antagonistas establecieron un régimen totalitario en la Antigua República de las Siete Islas. Son devotos del sol y del fuego destructor, lo que simboliza la destrucción y la violencia. Transformaron un lugar hermoso en un sitio inhóspito al desmontar toda la vegetación para extraer carbón, esclavizaron a los perros-dragón para que tiraran de los carros mineros, y crearon un sistema de opresión que causó rebeliones y el exilio de muchos habitantes.",
+            "vocabulario": [
+                "antagonistas",
+                "régimen totalitario",
+                "devotos",
+                "esclavitud"
+            ],
+            "conceptosClaves": [
+                "injusticia",
+                "destrucción ambiental",
+                "opresión"
+            ]
+        },
+        "5": {
+            "pregunta": "¿Qué isla es la más importante a nivel comercial en el Islote de las siete islas?",
+            "respuestaBasica": "La séptima isla.",
+            "respuestaCompleta": "La séptima isla es la más importante a nivel económico en el Islote de las Siete Islas. Antes era un lugar próspero donde los perros-dragón y los humanos vivían en armonía, y se sostenía con un mercado interno de frutas y verduras. Pero los Iscarotes la transformaron en el centro de extracción de carbón, destruyendo su belleza natural.",
+            "respuestaAvanzada": "La séptima isla es el centro económico del archipiélago, pero su historia es trágica. Originalmente era un paraíso donde perros-dragón y humanos convivían pacíficamente, sustentándose con agricultura (frutas y verduras) en un sistema económico equilibrado y sostenible. Sin embargo, los Iscarotes identificaron que debajo de la isla había carbón y decidieron explotarlo. Para extraer este mineral, desmontaron toda la vegetación, destruyeron huertas y jardines, convirtieron el lugar en un sitio inhóspito lleno de nubes de polvo gris, y esclavizaron a los perros-dragón. Así, la isla pasó de ser un ejemplo de armonía a ser el símbolo de la destrucción ambiental y la injusticia social.",
+            "vocabulario": [
+                "comercial",
+                "económico",
+                "extracción",
+                "carbón",
+                "armonía"
+            ],
+            "conceptosClaves": [
+                "cambio ambiental",
+                "economía",
+                "progreso vs. naturaleza"
+            ]
+        },
+        "6": {
+            "pregunta": "¿El hombre misterioso los engaña o dice la verdad? ¿Por qué?",
+            "respuestaBasica": "El hombre misterioso los engaña porque los lleva a una trampa.",
+            "respuestaCompleta": "El hombre misterioso los engaña. Cuando Sara, Benjamín e Hipólito siguen sus instrucciones y van a la dirección que él les dio (Calle del Sol 456), descubren que es una trampa. Los lleva a una librería de artes mágicas donde quedan atrapados. Hipólito, con su instinto animal, ya había mostrado desconfianza gruñendo cuando apareció el hombre.",
+            "respuestaAvanzada": "El hombre misterioso definitivamente engaña a los protagonistas, y esto nos enseña una lección importante sobre la precaución con extraños. Hay varias pistas en la historia que indican que no es confiable: aparece de manera misteriosa siguiéndolos, hace afirmaciones muy extrañas como 'yo sé todo, conozco todo', y lo más importante, Hipólito gruñe cuando lo ve. Los animales tienen muy buen instinto para detectar el peligro. Cuando los niños siguen las instrucciones del hombre y van a la Calle del Sol 456, caen en una trampa en la librería de artes mágicas. Sin embargo, cuando hacen caso al instinto de Hipólito y vuelven a casa, logran encontrar la verdadera solución a través del libro mágico. Esto nos enseña a confiar en nuestros instintos y en los de nuestros seres queridos.",
+            "vocabulario": [
+                "misterioso",
+                "engañar",
+                "trampa",
+                "instinto",
+                "precaución"
+            ],
+            "conceptosClaves": [
+                "confianza",
+                "peligro",
+                "intuición",
+                "seguridad"
+            ]
+        },
+        "7": {
+            "pregunta": "¿Qué isla tiene muchas cuevas?",
+            "respuestaBasica": "La isla 7.",
+            "respuestaCompleta": "La isla 7 tiene muchas cuevas. Según la descripción del mapa, es un territorio fértil con grandes cuevas para esconderse. También se menciona que los perros-dragón pueden refugiarse en cuevas ubicadas en los bordes del acantilado del Estrecho de las Gárgolas.",
+            "respuestaAvanzada": "La isla 7 es descrita como un territorio fértil con grandes cuevas para esconderse, lo que la convierte en un lugar estratégico importante. Las cuevas son refugios naturales que han sido fundamentales en la historia de las islas: cuando fracasó la rebelión contra los Iscarotes, los desertores humanos refugiaron a los sobrevivientes en el 'oscuro y recóndito paraje del otro lado del Estrecho de las Gárgolas'. En esta zona peligrosa, donde el mar es bravo y destruye las embarcaciones, solo los perros-dragón pueden refugiarse en las cuevas de los bordes del acantilado gracias a su capacidad de volar. Esto demuestra que las cuevas no solo son formaciones geológicas, sino lugares de protección y resistencia contra la opresión.",
+            "vocabulario": [
+                "cuevas",
+                "territorio fértil",
+                "refugiarse",
+                "acantilado",
+                "estratégico"
+            ],
+            "conceptosClaves": [
+                "refugio",
+                "protección",
+                "resistencia",
+                "geografía"
+            ]
+        }
+    },
+    "preguntasConversacionLiteraria": {
+        "basicas": [
+            {
+                "pregunta": "¿Hubo algo que te gustó de este libro?",
+                "tipoRespuesta": "personal",
+                "seguimiento": "¿Qué fue lo que más te llamó la atención de esa parte?"
+            },
+            {
+                "pregunta": "¿Qué te llamó especialmente la atención?",
+                "tipoRespuesta": "reflexiva",
+                "seguimiento": "¿Por qué crees que te llamó tanto la atención?"
+            },
+            {
+                "pregunta": "¿Hubo algo que no te gustara?",
+                "tipoRespuesta": "crítica",
+                "seguimiento": "¿Qué cambiarías de esa parte?"
+            },
+            {
+                "pregunta": "¿Hubo algo que te pareciera extraño?",
+                "tipoRespuesta": "analítica",
+                "seguimiento": "¿Crees que fue extraño a propósito o por casualidad?"
+            }
+        ],
+        "generales": [
+            {
+                "pregunta": "¿Has leído otros libros como éste?",
+                "tipoRespuesta": "comparativa",
+                "seguimiento": "¿En qué se parecen y en qué se diferencian?"
+            },
+            {
+                "pregunta": "¿Hay algo de lo que sucede en este libro que te haya pasado a vos?",
+                "tipoRespuesta": "personal",
+                "seguimiento": "¿Cómo te sentiste cuando te pasó?"
+            },
+            {
+                "pregunta": "¿Qué les dirías a tus amigos de este libro?",
+                "tipoRespuesta": "recomendación",
+                "seguimiento": "¿Por qué crees que les gustaría?"
+            }
+        ],
+        "especiales": [
+            {
+                "pregunta": "¿Dónde sucede la historia?",
+                "tipoRespuesta": "comprension",
+                "seguimiento": "¿Te recordó a algún lugar que conozcas?"
+            },
+            {
+                "pregunta": "¿Qué personajes te parecieron más interesantes?",
+                "tipoRespuesta": "analítica",
+                "seguimiento": "¿Qué te gustó de ese personaje?"
+            },
+            {
+                "pregunta": "¿Quién estaba contando la historia?",
+                "tipoRespuesta": "técnica",
+                "seguimiento": "¿Cómo te diste cuenta?"
+            }
+        ]
+    },
+    "respuestasIncorrectas": {
+        "ejemplos": [
+            {
+                "preguntaIncorrecta": "Hipólito es un gato volador",
+                "correccion": "No, Hipólito es un perro-dragón. Tiene características de perro pero también puede volar como un dragón."
+            },
+            {
+                "preguntaIncorrecta": "Los buenos son los Iscarotes",
+                "correccion": "No, los Iscarotes son los antagonistas (los malvados). Ellos destruyeron las islas y esclavizaron a los perros-dragón."
+            },
+            {
+                "preguntaIncorrecta": "La historia pasa en Buenos Aires",
+                "correccion": "No exactamente. Aunque Sara y Benjamín viven en Córdoba, la aventura principal sucede en la Antigua República de las Siete Islas."
+            }
+        ]
+    },
+    "estrategiasComprension": {
+        "nivelBasico": {
+            "descripcion": "Para niños que necesitan apoyo extra",
+            "estrategias": [
+                "Hacer preguntas simples sobre qué pasó",
+                "Pedir que identifiquen personajes principales",
+                "Usar palabras conocidas para explicar conceptos nuevos",
+                "Conectar con experiencias personales del niño"
+            ]
+        },
+        "nivelIntermedio": {
+            "descripcion": "Para niños con comprensión promedio",
+            "estrategias": [
+                "Preguntar sobre causas y consecuencias",
+                "Explorar motivaciones de personajes",
+                "Comparar situaciones del cuento con la vida real",
+                "Introducir vocabulario nuevo gradualmente"
+            ]
+        },
+        "nivelAvanzado": {
+            "descripcion": "Para niños con alta comprensión",
+            "estrategias": [
+                "Analizar temas profundos como justicia y medio ambiente",
+                "Explorar simbolismos y metáforas",
+                "Conectar con otras obras literarias",
+                "Reflexionar sobre múltiples perspectivas"
+            ]
+        }
+    }
+}

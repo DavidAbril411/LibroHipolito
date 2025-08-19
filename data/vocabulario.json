@@ -1,0 +1,174 @@
+{
+    "vocabularioComplejo": {
+        "perro-dragon": {
+            "definicion": "Animal mágico que tiene características de perro y de dragón",
+            "definicionSimple": "Un perro que puede volar como un dragón",
+            "sinonimos": ["criatura mágica", "animal fantástico"],
+            "ejemplo": "Hipólito es un perro-dragón porque es leal como un perro pero vuela como un dragón",
+            "categoria": "personajes"
+        },
+        "iscarotes": {
+            "definicion": "Los villanos que gobiernan las Siete Islas de manera injusta",
+            "definicionSimple": "Los malvados de la historia",
+            "sinonimos": ["antagonistas", "villanos", "malvados"],
+            "ejemplo": "Los Iscarotes son malvados porque esclavizaron a los perros-dragón",
+            "categoria": "personajes"
+        },
+        "regime totalitario": {
+            "definicion": "Forma de gobierno donde una persona o grupo tiene todo el poder y no permite libertades",
+            "definicionSimple": "Gobierno de malvados que no deja que la gente sea libre",
+            "sinonimos": ["dictadura", "gobierno injusto", "tiranía"],
+            "ejemplo": "Los Iscarotes crearon un régimen totalitario donde nadie podía desobedecerlos",
+            "categoria": "conceptos"
+        },
+        "ancestros": {
+            "definicion": "Familiares que vivieron antes que nosotros, como abuelos, bisabuelos",
+            "definicionSimple": "Los familiares más viejos de la familia",
+            "sinonimos": ["antepasados", "familia antigua"],
+            "ejemplo": "Falkor es el abuelo de Hipólito, es decir, uno de sus ancestros",
+            "categoria": "familia"
+        },
+        "grimorio": {
+            "definicion": "Libro antiguo que contiene conocimientos mágicos o secretos",
+            "definicionSimple": "Libro de magia muy viejo",
+            "sinonimos": ["libro mágico", "libro de hechizos"],
+            "ejemplo": "En el Grimorio de animales fantásticos encontraron información sobre Hipólito",
+            "categoria": "objetos"
+        },
+        "extraccion": {
+            "definicion": "Sacar algo de la tierra, como carbón o petróleo",
+            "definicionSimple": "Sacar cosas de debajo de la tierra",
+            "sinonimos": ["extraer", "sacar", "minar"],
+            "ejemplo": "Los Iscarotes se dedicaron a la extracción de carbón destruyendo la naturaleza",
+            "categoria": "actividades"
+        },
+        "inhospito": {
+            "definicion": "Lugar difícil para vivir, donde la vida es muy dura",
+            "definicionSimple": "Lugar feo y difícil para vivir",
+            "sinonimos": ["desagradable", "hostil", "poco acogedor"],
+            "ejemplo": "Las islas se volvieron inhóspitas después de que los Iscarotes destruyeron las plantas",
+            "categoria": "lugares"
+        },
+        "acantilado": {
+            "definicion": "Pared muy alta de roca junto al mar",
+            "definicionSimple": "Montaña muy alta al lado del mar",
+            "sinonimos": ["precipicio", "farallón"],
+            "ejemplo": "Los perros-dragón se refugian en cuevas de los acantilados",
+            "categoria": "geografia"
+        },
+        "devoto": {
+            "definicion": "Persona que adora o respeta mucho algo",
+            "definicionSimple": "Alguien que ama mucho algo",
+            "sinonimos": ["seguidor", "adorador"],
+            "ejemplo": "Los Iscarotes son devotos del fuego destructor",
+            "categoria": "conceptos"
+        },
+        "desertores": {
+            "definicion": "Personas que abandonan un grupo o ejército",
+            "definicionSimple": "Gente que se fue de donde estaba porque no les gustaba",
+            "sinonimos": ["fugitivos", "refugiados"],
+            "ejemplo": "Los desertores humanos ayudaron a los perros-dragón a escapar",
+            "categoria": "personajes"
+        }
+    },
+    "expresionesCordobesas": {
+        "che": {
+            "definicion": "Forma amigable de llamar a alguien en Argentina",
+            "ejemplo": "¡Che, mirá lo que encontré!",
+            "equivalente": "Oye, hey"
+        },
+        "boludo": {
+            "definicion": "Forma cariñosa de llamar a un amigo (puede ser insulto según el tono)",
+            "ejemplo": "No seas boludo, es obvio que es mágico",
+            "equivalente": "Tonto, amigo"
+        },
+        "pibe": {
+            "definicion": "Niño o chico joven",
+            "ejemplo": "Ese pibe encontró un perro-dragón",
+            "equivalente": "Chico, niño"
+        },
+        "mira": {
+            "definicion": "Forma de decir 'mira' en Argentina",
+            "ejemplo": "Mirá qué animal tan extraño",
+            "equivalente": "Mira, observa"
+        }
+    },
+    "referenciasLiterarias": {
+        "falkor": {
+            "obrigenal": "La Historia Sin Fin de Michael Ende",
+            "descripcion": "Dragón blanco de la suerte, amigo de Atreyu",
+            "explicacionNinos": "Falkor es un dragón bueno y amigable de un libro muy famoso. Es el abuelo de Hipólito",
+            "conexion": "Hipólito es nieto de este famoso dragón"
+        },
+        "adriano": {
+            "contextoHistorico": "Emperador romano (117-138 d.C.)",
+            "descripcion": "Conocido por gobernar con justicia y promover la paz",
+            "explicacionNinos": "Adriano fue un emperador (como un rey) muy bueno que vivió hace mucho tiempo",
+            "conexion": "Uno de los nombres propuestos para Hipólito"
+        },
+        "elige-tu-aventura": {
+            "generoLiterario": "Libros interactivos donde el lector toma decisiones",
+            "descripcion": "Libros donde tú decides qué pasa en la historia",
+            "explicacionNinos": "Son libros especiales donde tú eliges qué hacen los personajes",
+            "conexion": "Hipólito está escrito como estos libros especiales"
+        }
+    },
+    "geografiaCordoba": {
+        "ciudad": {
+            "nombre": "Córdoba",
+            "pais": "Argentina",
+            "descripcion": "Segunda ciudad más grande de Argentina",
+            "explicacionNinos": "Córdoba es una ciudad muy importante de Argentina donde viven Sara y Benjamín",
+            "caracteristicas": [
+                "Universidad histórica",
+                "Arquitectura colonial",
+                "Centro cultural"
+            ]
+        },
+        "clima": {
+            "descripcion": "Clima continental con veranos calurosos e inviernos fríos",
+            "explicacionNinos": "En Córdoba hace calor en verano y frío en invierno",
+            "conexion": "Por eso el día que encontraron a Hipólito era lluvioso y frío"
+        }
+    },
+    "conceptosEducativos": {
+        "adoptacion": {
+            "definicion": "Cuando una familia decide cuidar a un animal o niño que no tiene hogar",
+            "explicacionNinos": "Adoptar es cuando decides que un animal sin casa va a vivir contigo y ser tu familia",
+            "valores": ["responsabilidad", "amor", "cuidado"],
+            "ejemplo": "Sara y Benjamín adoptaron a Hipólito cuando lo encontraron solo"
+        },
+        "medio-ambiente": {
+            "definicion": "Todo lo que nos rodea en la naturaleza: plantas, animales, aire, agua",
+            "explicacionNinos": "El medio ambiente es como la casa grande donde viven todos los seres vivos",
+            "problemas": ["contaminación", "deforestación", "extinción"],
+            "ejemplo": "Los Iscarotes destruyeron el medio ambiente de las islas al cortar todas las plantas"
+        },
+        "amistad": {
+            "definicion": "Relación especial entre personas que se quieren y se cuidan",
+            "explicacionNinos": "La amistad es cuando te gusta estar con alguien y lo cuidas como familia",
+            "valores": ["lealtad", "confianza", "apoyo"],
+            "ejemplo": "Sara, Benjamín e Hipólito son amigos porque se cuidan y se ayudan"
+        },
+        "justicia": {
+            "definicion": "Tratar a todos de manera justa y correcta",
+            "explicacionNinos": "Justicia es cuando todos son tratados bien y nadie lastima a otros",
+            "contrario": "injusticia",
+            "ejemplo": "Los Iscarotes son injustos porque hacen sufrir a los perros-dragón"
+        }
+    },
+    "categoriasDidacticas": {
+        "personajes": ["perro-dragón", "iscarotes", "ancestros", "desertores"],
+        "lugares": ["acantilado", "inhóspito", "geografía"],
+        "objetos": ["grimorio"],
+        "conceptos": [
+            "régimen totalitario",
+            "devoto",
+            "justicia",
+            "medio-ambiente"
+        ],
+        "actividades": ["extracción", "adopción"],
+        "familia": ["ancestros", "amistad"],
+        "cultura": ["expresiones cordobesas", "referencias literarias"]
+    }
+}

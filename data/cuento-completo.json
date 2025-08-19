@@ -1,0 +1,192 @@
+{
+  "titulo": "Hipólito, mi perro-dragón",
+  "descripcion": "Esta es una historia de elecciones. Según la decisión que tomes, tendrás diferentes aventuras, algunas más peligrosas que otras. Pero no estarás solo: Hipólito, Sara y Benjamin te ayudarán.",
+  "genero": "Cuento interactivo de aventuras",
+  "tematicas": [
+    "amistad",
+    "aventura",
+    "elecciones",
+    "animales fantásticos",
+    "ecología",
+    "justicia",
+    "totalitarismo",
+    "resistencia"
+  ],
+
+  "personajes": {
+    "principales": [
+      {
+        "nombre": "Hipólito",
+        "tipo": "Perro-dragón",
+        "origen": "Islote de las 7 pequeñas islas",
+        "familia": "Hijo de Anaris, nieto de Falkor",
+        "descripcion": "Un perro-dragón de alas blancas con destellos dorados, patas grandes para aterrizar, cara de viejito sabio y energía de niño pequeño",
+        "caracteristicas": [
+          "Alas blancas con destellos dorados",
+          "Patas grandes y pesadas para aterrizar de grandes vuelos",
+          "Cara cansada de viejito sabio y ganas de un niño chiquito",
+          "Cicatriz de tres puntas cerca del cuello, entre la cabeza y las alas",
+          "Ojos marrones que a veces se vuelven color fuego con destellitos dorados",
+          "Ladra y aúlla con la voz de todos los ancestros",
+          "Puede volar grandes distancias",
+          "Se come todo lo que encuentra",
+          "Rodeado de mariposas azules que le dan besitos en la nariz",
+          "Tiene una piedra mágica que permite viajar en el espacio",
+          "Casa es una pista de aterrizaje porque está aprendiendo a volar"
+        ]
+      },
+      {
+        "nombre": "Sara",
+        "descripcion": "Una de los hermanos protagonistas que encuentra a Hipólito en la puerta de su casa",
+        "personalidad": "Decidida, curiosa, protectora, responsable"
+      },
+      {
+        "nombre": "Benjamín (Benja)",
+        "descripcion": "Hermano de Sara, compañero de aventuras",
+        "personalidad": "Observador, precavido, leal, analítico"
+      }
+    ],
+    "antagonistas": [
+      {
+        "nombre": "Los Iscarotes",
+        "descripcion": "Devotos del sol y del fuego destructor que gobiernan con régimen totalitario",
+        "acciones": [
+          "Consideraron mejor extraer carbón del interior de las islas",
+          "Desmontaron toda la vegetación, huertas y jardines",
+          "Destruyeron las fuentes de alimentos y el paisaje",
+          "Convirtieron las islas en lugar inhóspito con nubes de polvo gris",
+          "Esclavizaron a los perros dragones para extraer carbón",
+          "Impusieron un régimen totalitario con fuerza de hierro",
+          "Provocaron rebeliones que fracasaron"
+        ]
+      },
+      {
+        "nombre": "Hombre misterioso",
+        "descripcion": "Personaje que sigue a Sara y Benjamín en la calle",
+        "frases": [
+          "Yo sé dónde están las respuestas que buscan",
+          "Yo sé todo, conozco todo"
+        ],
+        "trampa": "Los dirige a una librería de artes mágicas en Calle del Sol 456 donde quedan atrapados",
+        "señal_peligro": "Hipólito gruñe cuando lo ve, alertando del peligro"
+      }
+    ]
+  },
+
+  "lugares": {
+    "casa_protagonistas": {
+      "descripcion": "Casa donde viven Sara y Benjamín, se convierte en pista de aterrizaje para Hipólito",
+      "elementos": [
+        "cocina donde Hipólito se come el libro",
+        "mariposas azules por todos lados"
+      ]
+    },
+    "biblioteca": {
+      "descripcion": "Lugar donde encuentran el Grimorio de animales fantásticos",
+      "libro_importante": "Grimorio de animales fantásticos (que Hipólito se come)"
+    },
+    "calle_del_sol_456": {
+      "descripcion": "Dirección de la librería de artes mágicas",
+      "peligro": "Es una trampa donde pueden quedar atrapados para siempre"
+    },
+    "antigua_republica_siete_islas": {
+      "descripcion": "Zona geográfica perdida y olvidada en el mapa, hogar original de Hipólito",
+      "caracteristicas": [
+        "Compuesta por siete islas conectadas por largos puentes",
+        "Distancias entre islas se recorren con botes",
+        "Vida difícil, toda tarea requiere mucho esfuerzo físico",
+        "Islas aisladas con poca vegetación",
+        "Días fríos y con mucho viento",
+        "Estrecho de las Gárgolas: espacio entre acantilados donde el mar es bravo"
+      ],
+      "islas": {
+        "isla_2": "La más pequeña, punto estratégico para ingresar al islote",
+        "isla_3": "Conviven casas-cuevas de piedra y nuevas construcciones",
+        "isla_4": "Crecen verduras y frutas que alimentan a la población",
+        "isla_6": "Isla volcánica con grandes erupciones",
+        "isla_7": "La más importante a nivel económico, territorio fértil con grandes cuevas para esconderse"
+      },
+      "historia": {
+        "pasado": "Los perros dragones permitían que humanos vivieran en armonía, mercado interno de frutas y verduras",
+        "presente": "Lugar inhóspito e insalubre, nubes de polvo gris, régimen extractivista de carbón"
+      }
+    }
+  },
+
+  "elementos_magicos": {
+    "piedra_de_hipolito": {
+      "poder": "Si la tocan todos juntos pueden viajar en el espacio",
+      "uso": "Permite regresar al lugar donde creció Hipólito"
+    },
+    "grimorio_animales_fantasticos": {
+      "contenido": "Información sobre las marcas/cicatrices en animales fantásticos",
+      "destino": "Hipólito se lo come junto con la merienda"
+    }
+  },
+
+  "decisiones_clave": [
+    {
+      "momento": "Encuentro inicial",
+      "opciones": ["Adoptar al animal", "Seguir con la vida normal"],
+      "consecuencia_mala": "Perder la oportunidad de una historia llena de aventuras"
+    },
+    {
+      "momento": "Elección de nombre",
+      "opciones": ["Falkor", "Adriano", "Hipólito"],
+      "nombre_correcto": "Hipólito",
+      "razon": "Es un nombre adecuado para un perro-dragón de alas blancas con destellos dorados"
+    },
+    {
+      "momento": "Búsqueda de información",
+      "opciones": [
+        "Preguntar a vecina",
+        "Ir a biblioteca",
+        "Buscar en Internet"
+      ],
+      "mejor_opcion": "Biblioteca",
+      "resultado": "Encuentran el Grimorio de animales fantásticos"
+    },
+    {
+      "momento": "Después de que Hipólito se come el libro",
+      "opciones": ["Armar el libro", "Volver a la biblioteca"],
+      "ambas_llevan_a": "Descubrir la piedra mágica de Hipólito"
+    },
+    {
+      "momento": "Encuentro con hombre misterioso",
+      "opciones": ["Seguir sus instrucciones", "Volver a casa"],
+      "trampa": "Seguir instrucciones lleva a quedar atrapados",
+      "seguridad": "Volver a casa siguiendo las señales de alerta de Hipólito"
+    }
+  ],
+
+  "temas_pedagogicos": [
+    "Importancia de las decisiones y sus consecuencias",
+    "Cuidado de los animales y la naturaleza",
+    "Resistencia contra la opresión y totalitarismo",
+    "Valor de la amistad y el trabajo en equipo",
+    "Consecuencias del extractivismo y destrucción ambiental",
+    "Intuición y señales de peligro",
+    "Búsqueda de conocimiento en fuentes confiables"
+  ],
+
+  "finales": [
+    {
+      "tipo": "final_perdido",
+      "descripcion": "Te has perdido la oportunidad de conocer una historia llena de aventuras"
+    },
+    {
+      "tipo": "final_trampa",
+      "descripcion": "Quedar atrapados en la librería de artes mágicas para siempre"
+    },
+    {
+      "tipo": "final_exitoso",
+      "descripcion": "Viajar al lugar donde creció Hipólito y quedarse un tiempo con él"
+    }
+  ],
+
+  "estructura_narrativa": {
+    "tipo": "Cuento de elección múltiple",
+    "navegacion": "Seguir números e indicaciones para desarrollo de historia",
+    "caracteristica": "Diferentes aventuras según decisiones tomadas"
+  }
+}

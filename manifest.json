@@ -1,0 +1,111 @@
+{
+    "name": "Hipólito, mi perro-dragón - Chat Educativo",
+    "short_name": "Hipólito",
+    "description": "Cuento digital interactivo con chatbot educativo offline para comprensión lectora infantil",
+    "version": "2.0.0",
+    "start_url": "./www/inicio.html",
+    "display": "standalone",
+    "background_color": "#74b9ff",
+    "theme_color": "#74b9ff",
+    "orientation": "portrait-primary",
+    "scope": "./",
+    "lang": "es-AR",
+    "categories": ["education", "books", "kids"],
+    "icons": [
+        {
+            "src": "assets/iconos/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/iconos/icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/iconos/icon-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/iconos/icon-128x128.png",
+            "sizes": "128x128",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/iconos/icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/iconos/icon-152x152.png",
+            "sizes": "152x152",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/iconos/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/iconos/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/iconos/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/iconos/icon-512x512-maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Chat Infantil",
+            "short_name": "Chat",
+            "description": "Conversar con Hipólito - Interfaz para niños",
+            "url": "./chat-infantil.html",
+            "icons": [
+                { "src": "assets/iconos/icon-96x96.png", "sizes": "96x96" }
+            ]
+        },
+        {
+            "name": "Centro de Actividades",
+            "short_name": "Inicio",
+            "description": "Página principal con todas las actividades",
+            "url": "./www/inicio.html",
+            "icons": [
+                { "src": "assets/iconos/icon-96x96.png", "sizes": "96x96" }
+            ]
+        },
+        {
+            "name": "Chat Rápido",
+            "short_name": "Express",
+            "description": "Chat directo y simple",
+            "url": "./chat-simple.html",
+            "icons": [
+                { "src": "assets/iconos/icon-96x96.png", "sizes": "96x96" }
+            ]
+        }
+    ],
+    "prefer_related_applications": false,
+    "related_applications": [],
+    "iarc_rating_id": "3+",
+    "edge_side_panel": {
+        "preferred_width": 400
+    }
+}

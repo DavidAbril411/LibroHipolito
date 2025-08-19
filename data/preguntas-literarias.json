@@ -1,0 +1,121 @@
+{
+  "preguntas_conversacion_literaria": {
+    "objetivo": "Entrenar un Chatbot para que realice preguntas con l@s niñ@s después de leer Hipólito, mi perro dragón",
+    "rol_chatbot": "Segunda docente",
+
+    "preguntas_basicas": [
+      "¿Hubo algo que te gustó de este libro?",
+      "¿Qué te llamó especialmente la atención?",
+      "¿Cómo hubieras preferido que fuera?",
+      "¿Hubo algo que no te gustara?",
+      "¿Qué partes te aburrieron?",
+      "¿Te saltaste partes?, ¿cuáles?",
+      "¿Si hubieras dejado de leer, dónde habrías abandonado el libro y por qué?",
+      "¿Hubo algo que te desconcertara?",
+      "¿Hubo algo que te pareciera extraño?",
+      "¿Encontraste algo que nunca antes habías visto en un libro?",
+      "¿Hubo algo que te tomara totalmente por sorpresa?",
+      "¿Notaste algo fuera de lugar, o que no iba con la historia?",
+      "¿Notaste alguna incongruencia?",
+      "¿Te diste cuenta de algún patrón o conexión?"
+    ],
+
+    "preguntas_generales": [
+      "La primera vez que viste el libro, todavía antes de leerlo, ¿qué tipo de libro pensaste que iba a ser?",
+      "¿Qué te hizo pensar eso?",
+      "¿Ahora que ya lo leíste, es lo que esperabas?",
+      "¿Has leído otros libros como éste?",
+      "¿En qué son iguales?",
+      "¿En qué diferentes?",
+      "Mientras lo estabas leyendo: ¿Encontraste palabras o frases, o alguna otra cosa que tenga que ver con el lenguaje, que te gustaran? ¿y que no te gustaran?",
+      "¿Notaste algo especial en la manera en que se usa el lenguaje en este libro?",
+      "Si el escritor te preguntara cómo podría mejorar el libro: ¿qué le dirías?",
+      "¿Hay algo de lo que sucede en este libro que te haya pasado a vos?",
+      "¿En qué es similar y en qué diferente de lo que te sucedió a vos?",
+      "¿Qué partes del libro te parecen más parecidas a la vida real?",
+      "¿Qué pasajes se te quedaron grabados en la mente?",
+      "¿Cuántas historias diferentes (tipos de historia) puedes encontrar en este libro?",
+      "¿Leíste este libro lenta o rápidamente?",
+      "¿De un tirón o en varias veces?",
+      "¿Qué les dirías a tus amigos de este libro?",
+      "¿Qué no les dirías porque podrías arruinarles la historia?",
+      "¿O porque podrían pensar que el libro es diferente a como realmente es?",
+      "¿Qué me sugerirías que le dijera a otras personas sobre el libro, que las ayudara a decidir si quieren leerlo o no?",
+      "¿Qué personas deberían leer este libro?, ¿mayores que vos?, ¿menores que vos?",
+      "¿Es bueno conversar sobre el libro después de haberlo leído?"
+    ],
+
+    "preguntas_especiales": {
+      "tiempo": [
+        "¿Cuánto tiempo transcurrió en la historia?",
+        "¿Cuándo hablas de cosas que te pasaron a vos, ¿siempre cuentas tu historia en el orden en que ocurrió?",
+        "¿A veces tienes motivos para no contarla en el mismo orden?",
+        "¿Cuáles son esos motivos?",
+        "¿Hay partes de la historia que tomaron mucho tiempo en suceder, pero se contaron rápidamente o en unas pocas palabras?",
+        "¿Y hay partes que sucedieron rápidamente pero tardaron mucho tiempo en contarlas?",
+        "¿Dónde están las partes que tomaron el mismo tiempo para contarlas del que hubiera tomado para que sucedieran?"
+      ],
+
+      "lugar": [
+        "¿En dónde sucede la historia?",
+        "¿Es importante dónde se sitúa?",
+        "¿podría haber sucedido en cualquier otro lugar?",
+        "¿hubiera sido mejor que se situara en otro lugar?",
+        "¿Pensabas en el lugar mientras estabas leyendo?",
+        "¿Hay pasajes en el libro que hablan especialmente del lugar?",
+        "¿qué te gustó o disgustó de ellos?",
+        "¿El lugar en sí era interesante?",
+        "¿quisieras saber más sobre él?"
+      ],
+
+      "personajes": [
+        "¿Qué personajes te parecieron más interesantes?",
+        "¿Es ese personaje el más importante de la historia o se trata de alguien más?",
+        "¿Qué personaje(s) no te gustaron?",
+        "¿Alguno de los personajes te recuerda a alguien que vos conozcas?",
+        "¿O te recuerda a algún personaje de otro libro?",
+        "¿Hubo algún personaje no mencionado en la historia pero sin el cual ésta no hubiera podido ocurrir?",
+        "¿Se te ocurre alguna razón por la cual ella/él no haya aparecido o sido mencionada/o?"
+      ],
+
+      "narracion": [
+        "¿Quién estaba contando –narrando- la historia?, ¿lo sabemos?, ¿cómo lo sabemos?",
+        "¿Está escrita en primera persona? (y si es así, ¿quién es esta persona?)",
+        "¿en tercera persona? (y si es así, ¿por alguien de la historia a quien conocemos o por alguien que conocemos o no conocemos que está fuera de la historia?",
+        "¿Qué piensa o siente la persona que cuenta la historia -el narrador- de los personajes?",
+        "¿le gustan o le disgustan? ¿cómo lo sabes?",
+        "¿El narrador aprueba o desaprueba las cosas que suceden y las cosas que hacen los personajes?",
+        "¿Vos las apruebas o desapruebas?",
+        "Piensa en vos como un espectador ¿con los ojos de quién viste la historia?",
+        "¿viste sólo lo que veía un personaje de la historia o a veces veías las cosas como las veía un personaje y luego como otro personaje y así?",
+        "¿Estabas adentro de la cabeza de uno de los personajes, sabiendo sólo lo que ella/él sabía, o la narración te llevaba adentro de varios personajes?",
+        "¿Llegaste alguna vez a saber lo que los personajes estaban pensando?, ¿se dijo alguna vez lo que estaban sintiendo?",
+        "¿O la historia fue contada todo el tiempo desde afuera de los personajes, viendo lo que hacían y escuchando lo que decían pero nunca sabiendo lo que pensaban o sentían?",
+        "¿Cuando estabas leyendo la historia, ¿sentiste que estaba sucediendo en ese mismo momento?, ¿o sentiste que estaba sucediendo en el pasado y la estaban recordando?",
+        "¿puedes señalarme algo del texto que te haya hecho sentir eso?",
+        "¿Sentías como si todo te estuviera ocurriendo a vos, como si fueras uno de los personajes?, ¿o te sentiste como si fueras un observador, viendo lo que sucedía pero sin tomar parte en la acción?",
+        "¿Si fueras un observador, desde dónde hubieras estado mirando?",
+        "¿Te pareció que mirabas desde diferentes lugares –a veces, tal vez, desde al lado de los personajes, a veces desde arriba como si fueras un helicóptero?",
+        "¿me puedes decir en qué partes del libro te sentiste así?"
+      ]
+    },
+
+    "preguntas_especificas_hipolito": [
+      "¿Por qué crees que Sara y Benjamín decidieron adoptar a Hipólito?",
+      "¿Qué te parece la decisión de llamarlo Hipólito en lugar de Falkor o Adriano?",
+      "¿Cómo describirías a Hipólito con tus propias palabras?",
+      "¿Qué opinas de los Iscarotes y lo que hicieron con las Siete Islas?",
+      "¿Por qué crees que Hipólito gruñó cuando vio al hombre misterioso?",
+      "¿Qué hubieras hecho tú en el lugar de Sara y Benjamín cuando el hombre misterioso les dio la dirección?",
+      "¿Te parece que fue una buena idea seguir las señales de alerta de Hipólito?",
+      "¿Qué te llama más la atención: las mariposas azules, la piedra mágica, o las alas de Hipólito?",
+      "¿Crees que los perros-dragón realmente existieron? ¿Por qué?",
+      "¿Cuál de las siete islas te gustaría visitar y por qué?",
+      "¿Qué te parece que Hipólito se haya comido el libro completo?",
+      "¿Cómo crees que se siente Hipólito al estar lejos de su hogar original?",
+      "¿Qué opinas del final donde pueden viajar al lugar donde creció Hipólito?",
+      "¿Prefieres las aventuras donde tomas decisiones o las historias lineales? ¿Por qué?",
+      "¿Qué mensaje crees que nos deja esta historia sobre cuidar la naturaleza?"
+    ]
+  }
+}

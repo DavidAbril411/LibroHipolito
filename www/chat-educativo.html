@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>👩‍🏫 Profesora Virtual - Evaluación del Cuento</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#e17055" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Profesora Virtual" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Comic Sans MS", "Trebuchet MS", cursive, sans-serif;
+        background: linear-gradient(135deg, #e17055 0%, #f39c12 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .chat-container {
+        width: 100%;
+        max-width: 800px;
+        height: 90vh;
+        background: white;
+        border-radius: 25px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        animation: aparecer 0.8s ease-out;
+      }
+
+      @keyframes aparecer {
+        from {
+          opacity: 0;
+          transform: translateY(50px) scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .chat-header {
+        background: linear-gradient(135deg, #e17055 0%, #f39c12 100%);
+        color: white;
+        padding: 25px;
+        text-align: center;
+        border-radius: 25px 25px 0 0;
+      }
+
+      .chat-header h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+        animation: brillar 3s ease-in-out infinite;
+      }
+
+      @keyframes brillar {
+        0%,
+        100% {
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        50% {
+          text-shadow: 2px 2px 15px rgba(255, 255, 255, 0.5);
+        }
+      }
+
+      .chat-header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        margin: 0;
+      }
+
+      /* Indicador de progreso */
+      .progreso-educativo {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px 25px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .progreso-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        font-weight: bold;
+      }
+
+      .barra-progreso {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .barra-progreso-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #00b894 0%, #55efc4 100%);
+        border-radius: 4px;
+        transition: width 0.5s ease;
+        width: 0%;
+      }
+
+      /* Estado de conexión */
+      .estado-conexion {
+        padding: 15px 25px;
+        background: #f8f9fa;
+        border-bottom: 1px solid #e9ecef;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+      }
+
+      .estado-conexion.exito {
+        background: #d4edda;
+        color: #155724;
+      }
+
+      .estado-conexion .icono {
+        font-size: 1.2rem;
+      }
+
+      /* Mensajes */
+      #chat-mensajes {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+        background: #f8f9fa;
+      }
+
+      .mensaje {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        animation: aparecer 0.5s ease-out;
+        gap: 15px;
+      }
+
+      .mensaje.usuario {
+        flex-direction: row-reverse;
+      }
+
+      .mensaje .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+
+      .mensaje.usuario .avatar {
+        background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+      }
+
+      .mensaje.profesora .avatar {
+        background: linear-gradient(135deg, #e17055 0%, #f39c12 100%);
+      }
+
+      .mensaje .contenido {
+        max-width: 70%;
+        padding: 15px 20px;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .mensaje.usuario .contenido {
+        background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        color: white;
+        border-bottom-right-radius: 5px;
+      }
+
+      .mensaje.profesora .contenido {
+        background: white;
+        color: #2d3436;
+        border-bottom-left-radius: 5px;
+        border: 2px solid #e17055;
+      }
+
+      .mensaje strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      .mensaje p {
+        margin: 0;
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+
+      .mensaje.error .contenido {
+        background: #f8d7da;
+        color: #721c24;
+        border: 2px solid #f5c6cb;
+      }
+
+      /* Animación de evaluación */
+      .mensaje.evaluando .contenido {
+        background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+        color: white;
+      }
+
+      .puntos-escribiendo {
+        display: flex;
+        gap: 5px;
+        margin-top: 10px;
+      }
+
+      .puntos-escribiendo span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: currentColor;
+        animation: latir 1.5s ease-in-out infinite;
+      }
+
+      .puntos-escribiendo span:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .puntos-escribiendo span:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+      .puntos-escribiendo span:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes latir {
+        0%,
+        60%,
+        100% {
+          opacity: 0.3;
+          transform: scale(0.8);
+        }
+        30% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+      /* Input área */
+      .chat-input {
+        padding: 20px 25px;
+        background: white;
+        border-top: 2px solid #e9ecef;
+        display: flex;
+        gap: 15px;
+        align-items: flex-end;
+      }
+
+      #chat-input {
+        flex: 1;
+        padding: 15px 20px;
+        border: 2px solid #e17055;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        font-family: inherit;
+        resize: none;
+        max-height: 100px;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+
+      #chat-input:focus {
+        border-color: #d63031;
+        box-shadow: 0 0 0 3px rgba(225, 112, 85, 0.2);
+      }
+
+      #btn-enviar {
+        background: linear-gradient(135deg, #e17055 0%, #f39c12 100%);
+        border: none;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        color: white;
+        font-size: 1.3rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #btn-enviar:hover:not(:disabled) {
+        transform: scale(1.1);
+        box-shadow: 0 5px 15px rgba(225, 112, 85, 0.4);
+      }
+
+      #btn-enviar:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      /* Controles adicionales */
+      .controles-adicionales {
+        padding: 15px 25px;
+        background: #f8f9fa;
+        border-top: 1px solid #e9ecef;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      .btn-control {
+        background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+        border: none;
+        border-radius: 20px;
+        padding: 10px 20px;
+        color: white;
+        font-size: 0.9rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: inherit;
+      }
+
+      .btn-control:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .chat-container {
+          height: 95vh;
+          margin: 5px;
+          border-radius: 15px;
+        }
+
+        .chat-header {
+          padding: 20px 15px;
+          border-radius: 15px 15px 0 0;
+        }
+
+        .chat-header h1 {
+          font-size: 1.8rem;
+        }
+
+        .progreso-educativo {
+          padding: 10px 15px;
+        }
+
+        .progreso-info {
+          font-size: 0.8rem;
+        }
+
+        #chat-mensajes {
+          padding: 15px;
+        }
+
+        .mensaje .contenido {
+          max-width: 85%;
+          padding: 12px 15px;
+        }
+
+        .chat-input {
+          padding: 15px;
+        }
+
+        .controles-adicionales {
+          padding: 10px 15px;
+          flex-wrap: wrap;
+        }
+      }
+
+      /* Scroll personalizado */
+      #chat-mensajes::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      #chat-mensajes::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+      }
+
+      #chat-mensajes::-webkit-scrollbar-thumb {
+        background: #e17055;
+        border-radius: 3px;
+      }
+
+      #chat-mensajes::-webkit-scrollbar-thumb:hover {
+        background: #d63031;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-container">
+      <!-- Header -->
+      <div class="chat-header">
+        <h1>👩‍🏫 Profesora Virtual</h1>
+        <p>Evaluación sobre el cuento de Hipólito</p>
+      </div>
+
+      <!-- Progreso ELIMINADO completamente -->
+      <div id="progreso-educativo" class="progreso-educativo" style="display: none !important; visibility: hidden;">
+      </div>
+
+      <!-- Estado de conexión -->
+      <div id="estado-conexion" class="estado-conexion">
+        <span class="icono">🔄</span>
+        <span class="texto">Preparando evaluación...</span>
+      </div>
+
+      <!-- Mensajes -->
+      <div id="chat-mensajes"></div>
+
+      <!-- Input -->
+      <div class="chat-input">
+        <textarea
+          id="chat-input"
+          placeholder="Escribe tu respuesta aquí..."
+          rows="1"
+          disabled
+        ></textarea>
+        <button id="btn-enviar" disabled>📤</button>
+      </div>
+
+      <!-- Controles adicionales -->
+      <div class="controles-adicionales">
+        <button class="btn-control" id="btn-nueva-sesion">
+          🔄 Nueva Evaluación
+        </button>
+        <button class="btn-control" onclick="window.close()">
+          🏠 Volver al Cuento
+        </button>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/profesora-virtual.js"></script>
+    <script src="js/chat-educativo.js"></script>
+
+    <script>
+      // Inicializar chat educativo
+      document.addEventListener("DOMContentLoaded", async () => {
+        console.log("👩‍🏫 Iniciando Chat Educativo con Profesora Virtual...");
+
+        try {
+          // Crear instancia del chat educativo
+          window.chat = new ChatEducativo();
+
+          // Inicializar
+          await window.chat.inicializar();
+
+          console.log("✅ Chat educativo iniciado exitosamente");
+        } catch (error) {
+          console.error("❌ Error iniciando chat educativo:", error);
+
+          // Mostrar error al usuario
+          const estadoConexion = document.getElementById("estado-conexion");
+          if (estadoConexion) {
+            estadoConexion.className = "estado-conexion error";
+            estadoConexion.innerHTML = `
+              <span class="icono">❌</span>
+              <span class="texto">Error al inicializar la evaluación</span>
+            `;
+          }
+        }
+      });
+
+      // Auto-resize del textarea
+      document.addEventListener("DOMContentLoaded", () => {
+        const textarea = document.getElementById("chat-input");
+        if (textarea) {
+          textarea.addEventListener("input", function () {
+            this.style.height = "auto";
+            this.style.height = Math.min(this.scrollHeight, 100) + "px";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

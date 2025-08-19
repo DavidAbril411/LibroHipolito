@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🐉 Hipólito, mi perro-dragón - Cuento Interactivo</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/estilos-infantiles.css" />
+
+    <style>
+      /* ===== CUENTO INTERACTIVO SECUENCIAL ===== */
+      body {
+        font-family: "Comic Sans MS", "Trebuchet MS", cursive, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+        background: #000;
+      }
+
+      .cuento-pantalla {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: all 1.5s ease-in-out;
+        padding-bottom: 40px;
+      }
+
+      /* Centrar para pantallas especiales */
+      .cuento-pantalla.pantalla-centrada {
+        align-items: center;
+        padding-bottom: 0;
+      }
+
+      /* Fondos con imágenes reales */
+      .fondo-narrador {
+        background-image: url("../assets/imagenes/capa ciudad .jpg");
+        position: relative;
+      }
+
+      .fondo-lluvia {
+        background-image: url("../assets/imagenes/ciudad oscura y gris lluvia2.jpg");
+        position: relative;
+      }
+
+      .fondo-lluvia::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("../assets/imagenes/capa lluvia ciudad.png");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.7;
+        animation: lluvia 4s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .fondo-casa {
+        background-image: url("../assets/imagenes/living con todo.jpg");
+      }
+
+      .fondo-adopcion {
+        background-image: url("../assets/imagenes/living sin libro.jpg");
+      }
+
+      .fondo-islas {
+        background-image: url("../assets/imagenes/islas 2.jpg");
+        position: relative;
+      }
+
+      .fondo-islas::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 30%;
+        background-image: url("../assets/imagenes/olitas 2.png");
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: repeat-x;
+        opacity: 0.8;
+        animation: olitas 3s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .fondo-biblioteca {
+        background-image: url("../assets/imagenes/puerta libreria1.jpg");
+      }
+
+      .fondo-biblioteca-interior {
+        background-image: url("../assets/imagenes/libro en mesa.jpg");
+      }
+
+      .fondo-misterioso {
+        background-image: url("../assets/imagenes/callejon.jpg");
+        filter: brightness(0.7) contrast(1.2);
+      }
+
+      .fondo-magico {
+        background-image: url("../assets/imagenes/islasjpeg.jpg");
+        position: relative;
+      }
+
+      .fondo-magico::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          transparent 30%,
+          rgba(255, 215, 0, 0.3) 50%,
+          transparent 70%
+        );
+        animation: brilloMagico 4s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .fondo-ciudad {
+        background-image: url("../assets/imagenes/ciudad oscura y gris desenfocada.jpg");
+      }
+
+      .fondo-callejon {
+        background-image: url("../assets/imagenes/callejon con personas.jpg");
+      }
+
+      @keyframes lluvia {
+        0% {
+          transform: translateY(-10px);
+          opacity: 0.5;
+        }
+        50% {
+          transform: translateY(0px);
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(-10px);
+          opacity: 0.5;
+        }
+      }
+
+      @keyframes olitas {
+        0%,
+        100% {
+          transform: translateX(0px);
+        }
+        50% {
+          transform: translateX(-20px);
+        }
+      }
+
+      @keyframes brilloMagico {
+        0%,
+        100% {
+          opacity: 0.2;
+          transform: translateX(-100%);
+        }
+        50% {
+          opacity: 0.5;
+          transform: translateX(100%);
+        }
+      }
+
+      /* Overlay para mejor legibilidad del texto */
+      .cuento-pantalla::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      /* Overlay especial para bibliotecas */
+      .fondo-biblioteca::before,
+      .fondo-biblioteca-interior::before {
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+      /* Overlay especial para islas */
+      .fondo-islas::before {
+        background: rgba(0, 0, 0, 0.15);
+      }
+
+      /* Overlay especial para escenas mágicas */
+      .fondo-magico::after {
+        z-index: 1;
+      }
+
+      /* Contenedor del texto */
+      .texto-container {
+        position: relative;
+        z-index: 2;
+        background: rgba(255, 255, 255, 0.247);
+        border-radius: 25px;
+        padding: 25px 35px;
+        max-width: 900px;
+        width: 90%;
+        margin: 20px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        text-align: center;
+        animation: aparecerTexto 0.8s ease-out;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        margin-bottom: 80px;
+      }
+
+      /* ===== PERSONAJES PNG ===== */
+      .personaje-imagen {
+        position: absolute;
+        z-index: 3;
+        opacity: 0;
+        animation: aparecerPersonaje 1s ease-out forwards;
+        filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+        transition: all 0.5s ease;
+      }
+
+      @keyframes aparecerPersonaje {
+        from {
+          opacity: 0;
+          transform: translateY(20px) scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* Hipólito en diferentes estados */
+      .hipolito-bebe {
+        bottom: 25%;
+        left: 15%;
+        width: 180px;
+        height: auto;
+      }
+
+      .hipolito-adulto {
+        bottom: 20%;
+        right: 20%;
+        width: 200px;
+        height: auto;
+      }
+
+      .hipolito-feliz {
+        bottom: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 190px;
+        height: auto;
+      }
+
+      .hipolito-triste {
+        bottom: 25%;
+        left: 30%;
+        width: 180px;
+        height: auto;
+      }
+
+      .hipolito-sorprendido {
+        bottom: 25%;
+        right: 25%;
+        width: 185px;
+        height: auto;
+      }
+
+      /* Sara en diferentes estados */
+      .sara-feliz {
+        bottom: 15%;
+        left: 25%;
+        width: 140px;
+        height: auto;
+      }
+
+      .sara-sorprendida {
+        bottom: 15%;
+        left: 20%;
+        width: 140px;
+        height: auto;
+      }
+
+      .sara-triste {
+        bottom: 15%;
+        left: 30%;
+        width: 140px;
+        height: auto;
+      }
+
+      /* Benjamín (Jeremías) en diferentes estados */
+      .benjamin-feliz {
+        bottom: 15%;
+        right: 25%;
+        width: 140px;
+        height: auto;
+      }
+
+      .benjamin-sorprendido {
+        bottom: 15%;
+        right: 20%;
+        width: 140px;
+        height: auto;
+      }
+
+      .benjamin-triste {
+        bottom: 15%;
+        right: 30%;
+        width: 140px;
+        height: auto;
+      }
+
+      /* Hermanos juntos */
+      .ninos-espalda {
+        bottom: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: auto;
+      }
+
+      /* Elementos especiales */
+      .mariposas {
+        top: 20%;
+        right: 15%;
+        width: 120px;
+        height: auto;
+        animation: flotarMariposas 3s ease-in-out infinite;
+      }
+
+      @keyframes flotarMariposas {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(2deg);
+        }
+      }
+
+      .libro-mesa {
+        bottom: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: auto;
+      }
+
+      .libro-roto {
+        bottom: 25%;
+        left: 45%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: auto;
+      }
+
+      .iscarotes {
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 160px;
+        height: auto;
+        filter: drop-shadow(0 5px 20px rgba(139, 69, 19, 0.5));
+      }
+
+      /* Responsivo para personajes */
+      @media (max-width: 768px) {
+        .personaje-imagen {
+          width: 80% !important;
+          max-width: 150px;
+        }
+
+        .hipolito-bebe,
+        .hipolito-adulto,
+        .hipolito-feliz {
+          width: 140px;
+        }
+
+        .sara-feliz,
+        .sara-sorprendida,
+        .sara-triste,
+        .benjamin-feliz,
+        .benjamin-sorprendido,
+        .benjamin-triste {
+          width: 110px;
+        }
+
+        .ninos-espalda {
+          width: 160px;
+        }
+      }
+
+      @keyframes aparecerTexto {
+        from {
+          opacity: 0;
+          transform: translateY(50px) scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .titulo-cuento {
+        font-size: 3.5rem;
+        color: #2d3436;
+        margin: 0 0 30px 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        animation: tituloBrillante 3s ease-in-out infinite;
+      }
+
+      @keyframes tituloBrillante {
+        0%,
+        100% {
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        50% {
+          text-shadow: 2px 2px 15px rgba(116, 185, 255, 0.5);
+        }
+      }
+
+      .texto-narrativo {
+        font-size: 1.6rem;
+        line-height: 1.8;
+        color: #2d3436;
+        margin: 0 0 30px 0;
+        text-align: left;
+      }
+
+      .texto-centro {
+        text-align: center;
+      }
+
+      .dialogo {
+        font-size: 1.8rem;
+        color: #000000;
+        font-weight: bold;
+        margin: 0 0 30px 0;
+        text-align: left;
+        padding: 20px;
+        background: linear-gradient(
+          135deg,
+          rgba(116, 186, 255, 0.486) 0%,
+          rgba(116, 185, 255, 0.05) 100%
+        );
+        border-left: 5px solid #74b9ff;
+        border-radius: 10px;
+      }
+
+      .personaje {
+        color: #fd79a8;
+        font-size: 1.2rem;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .decision-container {
+        margin-top: 40px;
+      }
+
+      .decision-titulo {
+        font-size: 1.8rem;
+        color: #2d3436;
+        margin-bottom: 30px;
+        font-weight: bold;
+      }
+
+      .botones-decision {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .btn-decision {
+        background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);
+        border: none;
+        border-radius: 50px;
+        padding: 20px 30px;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: inherit;
+        box-shadow: 0 10px 25px rgba(0, 184, 148, 0.3);
+        text-align: left;
+      }
+
+      .btn-decision:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 184, 148, 0.4);
+      }
+
+      .btn-decision:active {
+        transform: translateY(-2px);
+      }
+
+      /* Indicador de clic */
+      .indicador-click {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 10px 18px;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #636e72;
+        animation: pulsoIndicador 2s ease-in-out infinite;
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(8px);
+      }
+
+      @keyframes pulsoIndicador {
+        0%,
+        100% {
+          transform: translateX(-50%) scale(1);
+          opacity: 0.8;
+        }
+        50% {
+          transform: translateX(-50%) scale(1.05);
+          opacity: 1;
+        }
+      }
+
+      .indicador-click:hover {
+        background: rgba(255, 255, 255, 1);
+        transform: translateX(-50%) scale(1.1);
+      }
+
+      /* Profesor Digital Flotante */
+      .profesor-flotante {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #e17055 0%, #f39c12 100%);
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 15px 35px rgba(225, 112, 85, 0.4);
+        transition: all 0.4s ease;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 4px solid white;
+        animation: pulsoProfesor 3s ease-in-out infinite;
+      }
+
+      .profesor-flotante:hover {
+        transform: scale(1.15);
+        box-shadow: 0 20px 45px rgba(225, 112, 85, 0.6);
+      }
+
+      .icono-profesor {
+        font-size: 2.2rem;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .profesor-tooltip {
+        position: absolute;
+        bottom: 100%;
+        right: 0;
+        background: #2d3436;
+        color: white;
+        padding: 12px 16px;
+        border-radius: 15px;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+
+      .profesor-flotante:hover .profesor-tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-5px);
+      }
+
+      @keyframes pulsoProfesor {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      /* Progreso de la historia */
+      .progreso-historia {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #636e72;
+        z-index: 1000;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .cuento-pantalla {
+          padding-bottom: 15px;
+        }
+
+        .texto-container {
+          padding: 20px 15px;
+          margin: 15px;
+          margin-bottom: 60px;
+        }
+
+        .titulo-cuento {
+          font-size: 2.5rem;
+        }
+
+        .texto-narrativo {
+          font-size: 1.3rem;
+        }
+
+        .dialogo {
+          font-size: 1.5rem;
+          padding: 15px;
+        }
+
+        .btn-decision {
+          font-size: 1.2rem;
+          padding: 15px 25px;
+        }
+
+        .indicador-click {
+          bottom: 15px;
+          padding: 8px 12px;
+          font-size: 0.9rem;
+        }
+
+        .profesor-flotante {
+          width: 60px;
+          height: 60px;
+          bottom: 20px;
+          right: 20px;
+        }
+
+        .icono-profesor {
+          font-size: 1.8rem;
+        }
+
+        .progreso-historia {
+          top: 10px;
+          left: 10px;
+          padding: 8px 15px;
+          font-size: 0.9rem;
+        }
+      }
+
+      /* Estados especiales */
+      .final-historia {
+        background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      .final-historia .texto-narrativo {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Progreso de la historia -->
+    <div class="progreso-historia" id="progreso-historia">
+      📖 Inicio del cuento
+    </div>
+
+    <!-- Pantalla principal del cuento -->
+    <div class="cuento-pantalla fondo-lluvia" id="pantalla-cuento">
+      <div class="texto-container" id="contenido-texto">
+        <h1 class="titulo-cuento">🐉 Hipólito, mi perro-dragón</h1>
+        <div class="texto-narrativo texto-centro">
+          Esta es una historia de elecciones. Según la decisión que tomes,
+          tendrás diferentes aventuras, algunas más peligrosas que otras. Pero
+          no estarás solo: Hipólito, Sara y Benjamin te ayudarán. Podrá seguir
+          los números y las indicaciones para entender cómo se desarrolla la
+          historia.
+        </div>
+      </div>
+
+      <div class="indicador-click" id="indicador-click">
+        👆 Haz clic para continuar
+      </div>
+    </div>
+
+    <!-- Profesor Digital Flotante -->
+    <button
+      class="profesor-flotante"
+      onclick="abrirChat()"
+      onkeydown="if(event.key==='Enter'||event.key===' ')abrirChat()"
+      tabindex="0"
+      aria-label="Evaluación con la profesora virtual"
+    >
+      <span class="icono-profesor">👩‍🏫</span>
+      <div class="profesor-tooltip">Evaluación del Cuento</div>
+    </button>
+
+    <script>
+      // ===== MOTOR DEL CUENTO SECUENCIAL =====
+      class CuentoSecuencial {
+        constructor() {
+          this.secuenciaActual = 0;
+          this.pantalla = document.getElementById("pantalla-cuento");
+          this.contenidoTexto = document.getElementById("contenido-texto");
+          this.indicadorClick = document.getElementById("indicador-click");
+          this.progreso = document.getElementById("progreso-historia");
+          this.bloqueado = false; // Evitar avances automáticos no deseados
+
+          console.log(
+            "🚀 CuentoSecuencial v2.1 inicializando - ",
+            new Date().toLocaleTimeString()
+          );
+
+          // Secuencia completa del cuento
+          this.secuencias = {
+            // Secuencias numeradas
+            0: {
+              tipo: "introduccion",
+              fondo: "fondo-narrador",
+              titulo: "🐉 Hipólito, mi perro-dragón",
+              personaje: "Narrador",
+              texto:
+                "Esta es una historia de elecciones. Según la decisión que tomes, tendrás diferentes aventuras, algunas más peligrosas que otras. Pero no estarás solo: Hipólito, Sara y Benjamin te ayudarán. Podrá seguir los números y las indicaciones para entender cómo se desarrolla la historia.",
+              progreso: "Introducción",
+            },
+
+            1: {
+              tipo: "narrativo",
+              fondo: "fondo-narrador",
+              personaje: "Narrador",
+              texto:
+                "Esta historia comenzó un día de lluvia, cuando la ciudad estaba colapsada. En la puerta de nuestra casa apareció una bolita blanca de plumas y pelos.",
+              progreso: "El encuentro misterioso",
+            },
+
+            2: {
+              tipo: "dialogo",
+              fondo: "fondo-lluvia",
+              personaje: "Sara",
+              texto: "Benja, mirá lo que encontré.",
+              progreso: "Sara encuentra algo especial",
+            },
+
+            3: {
+              tipo: "dialogo",
+              fondo: "fondo-casa",
+              personaje: "Benjamin",
+              texto: "¿Es un gatito?",
+              progreso: "Primeras preguntas",
+            },
+
+            4: {
+              tipo: "dialogo",
+              fondo: "fondo-casa",
+              personaje: "Sara",
+              texto: "No sé ¿capaz un perrito?",
+              progreso: "Dudas sobre la criatura",
+            },
+
+            5: {
+              tipo: "dialogo",
+              fondo: "fondo-casa",
+              personaje: "Benjamin",
+              texto: "Pero tiene alas ¿será un animal mitológico?",
+              progreso: "Descubrimiento de las alas",
+            },
+
+            6: {
+              tipo: "decision",
+              fondo: "fondo-casa",
+              personaje: "Benjamin",
+              texto: "¿Qué hacemos?",
+              opciones: [
+                { texto: "1. Lo adoptamos", destino: 7 },
+                {
+                  texto: "2. Seguimos con nuestra vida",
+                  destino: "final_malo",
+                },
+              ],
+              progreso: "Primera decisión importante",
+            },
+
+            7: {
+              tipo: "dialogo",
+              fondo: "fondo-adopcion",
+              personaje: "Sara",
+              texto: "Me parece una excelente idea.",
+              progreso: "Decisión de adoptar",
+            },
+
+            8: {
+              tipo: "dialogo",
+              fondo: "fondo-adopcion",
+              personaje: "Benjamin",
+              texto: "¿Cómo lo nombramos?",
+              progreso: "Eligiendo un nombre",
+            },
+
+            9: {
+              tipo: "decision",
+              fondo: "fondo-adopcion",
+              texto: "Elige un nombre para la criatura mágica:",
+              opciones: [
+                { texto: "3. Falkor", destino: "nombre_falkor" },
+                { texto: "4. Adriano", destino: "nombre_adriano" },
+                { texto: "5. Hipólito", destino: "nombre_hipolito" },
+              ],
+              progreso: "Decisión del nombre",
+            },
+
+            // Secuencias con nombres
+            nombre_falkor: {
+              tipo: "dialogo_multiple",
+              fondo: "fondo-adopcion",
+              dialogos: [
+                {
+                  personaje: "Sara",
+                  texto:
+                    "Se parece a Falkor. Falkor es un dragón blanco de la suerte. Uno de los personajes más conocidos de La historia sin fin de Michael Ende.",
+                },
+                {
+                  personaje: "Benjamin",
+                  texto:
+                    "Me encanta ese libro. Pero no, no es un nombre adecuado.",
+                },
+              ],
+              continuar: "mapa_islas",
+              progreso: "Falkor no es el nombre correcto",
+            },
+
+            nombre_adriano: {
+              tipo: "dialogo_multiple",
+              fondo: "fondo-adopcion",
+              dialogos: [
+                {
+                  personaje: "Sara",
+                  texto:
+                    "Mmm Adriano?? Adriano fue un emperador romano conocido por gobernar con justicia y promover la paz.",
+                },
+                {
+                  personaje: "Benjamin",
+                  texto: "No, no me gusta. él es un perrito muy chiquito",
+                },
+              ],
+              continuar: "mapa_islas",
+              progreso: "Adriano tampoco es el nombre",
+            },
+
+            nombre_hipolito: {
+              tipo: "dialogo_multiple",
+              fondo: "fondo-adopcion",
+              dialogos: [
+                { personaje: "Sara", texto: "Hipólito, el perro dragón." },
+                { personaje: "Benjamin", texto: "Siiii, mi perro-dragón." },
+                {
+                  personaje: "Sara",
+                  texto:
+                    "Es un nombre adecuado para un perro-dragón de alas blancas con destellos dorados, patas grandes y pesadas para aterrizar de grandes vuelos. La cara cansada de viejito sabio y las ganas de un niño chiquito.",
+                },
+              ],
+              continuar: "mapa_islas",
+              progreso: "¡Hipólito es el nombre perfecto!",
+            },
+
+            mapa_islas: {
+              tipo: "narrativo",
+              fondo: "fondo-islas",
+              titulo: "El Mapa de las Siete Islas",
+              texto:
+                "La Antigua república de las siete pequeñas islas es una zona geográfica perdida y olvidada en el mapa. Tal como su nombre lo indica, está compuesta por siete islas conectadas por largos puentes. Las distancias entre una y otra se pueden recorrer con botes. La vida en La Antigua república de las siete pequeñas islas es difícil, toda tarea requiere mucho esfuerzo físico. Las islas se encuentran aisladas y crece poca vegetación. Los días son fríos y con mucho viento.",
+              continuar: "busqueda_info",
+              progreso: "Conociendo las Siete Islas",
+            },
+
+            busqueda_info: {
+              tipo: "dialogo_multiple",
+              fondo: "fondo-casa",
+              dialogos: [
+                {
+                  personaje: "Sara",
+                  texto:
+                    "Nuestra casa es una pista de aterrizaje porque Hipólito está aprendiendo a volar.",
+                },
+                {
+                  personaje: "Benjamin",
+                  texto:
+                    "También hay mariposas azules por todos lados que le dan besitos en la nariz.",
+                },
+                {
+                  personaje: "Sara",
+                  texto:
+                    "Hipólito tiene una vieja cicatriz de tres puntas cerca del cuello, entre la cabeza y las alas. Con mi hermano decidimos averiguar su historia.",
+                },
+              ],
+              continuar: "decision_busqueda",
+              progreso: "Investigando a Hipólito",
+            },
+
+            decision_busqueda: {
+              tipo: "decision",
+              fondo: "fondo-casa",
+              texto: "¿Dónde podemos buscar información?",
+              opciones: [
+                { texto: "6. Preguntar a una vecina", destino: "vecina" },
+                { texto: "7. Ir a la biblioteca", destino: "biblioteca" },
+                { texto: "8. Buscar en Internet", destino: "internet" },
+              ],
+              progreso: "Decidiendo dónde buscar",
+            },
+
+            vecina: {
+              tipo: "narrativo",
+              fondo: "fondo-callejon",
+              texto:
+                "No encontramos a la vecina en su casa. Seguramente fue a hacer las compras.",
+              continuar: "biblioteca",
+              progreso: "La vecina no está",
+            },
+
+            internet: {
+              tipo: "narrativo",
+              fondo: "fondo-casa",
+              texto:
+                "En Internet no porque Hipólito es un animal ancestral y esas historias ya quedaron olvidadas en algún libro viejo.",
+              continuar: "biblioteca",
+              progreso: "Internet no tiene respuestas",
+            },
+
+            biblioteca: {
+              tipo: "narrativo",
+              fondo: "fondo-biblioteca",
+              texto:
+                "Fuimos a la biblioteca y encontramos en un viejo libro que tenía por título Grimorio de animales fantásticos, descubrimos que las marcas de ese tipo podían ser por una razón. Para saber más conviene buscar en el mapa.",
+              continuar: "decision_biblioteca",
+              progreso: "En la biblioteca",
+            },
+
+            decision_biblioteca: {
+              tipo: "decision",
+              fondo: "fondo-biblioteca-interior",
+              texto: "¿Qué hacemos?",
+              opciones: [
+                { texto: "9. Ver mapa", destino: "ver_mapa" },
+                { texto: "10. Seguir leyendo", destino: "libro_comido" },
+              ],
+              progreso: "Decisión en la biblioteca",
+            },
+
+            ver_mapa: {
+              tipo: "final",
+              fondo: "fondo-magico",
+              titulo: "¡GUAUU!",
+              texto:
+                "Sara: En este lugar creció Hipólito, nos quedaremos un tiempo con él.",
+              mensajeFinal:
+                "Querido lectojugador, no te preocupes podes continuar explorando otros posibles finales.",
+              progreso: "Final - Viaje al mapa",
+            },
+
+            libro_comido: {
+              tipo: "dialogo",
+              fondo: "fondo-casa",
+              personaje: "Sara",
+              texto:
+                "Hicimos los deberes y cuando volvimos a la cocina… Hipólito se había comido todoooo el libro y también nuestra merienda. ¡Los perros dragones se comen todo lo que encuentran!",
+              continuar: "decision_libro_comido",
+              progreso: "¡Hipólito se comió el libro!",
+            },
+
+            decision_libro_comido: {
+              tipo: "decision",
+              fondo: "fondo-casa",
+              texto: "¿Qué hacemos?",
+              opciones: [
+                { texto: "11. Armar el libro", destino: "armar_libro" },
+                {
+                  texto: "7. Volver a la biblioteca",
+                  destino: "volver_biblioteca",
+                },
+              ],
+              progreso: "Decidiendo qué hacer",
+            },
+
+            final_malo: {
+              tipo: "final",
+              fondo: "fondo-misterioso",
+              titulo: "Oportunidad Perdida",
+              texto:
+                "Te has perdido la oportunidad de conocer una historia llena de aventuras.",
+              progreso: "Final - Oportunidad perdida",
+            },
+
+            armar_libro: {
+              tipo: "dialogo_multiple",
+              fondo: "fondo-biblioteca-interior",
+              dialogos: [
+                {
+                  personaje: "Benjamin",
+                  texto:
+                    "Acá dice que si tocamos todos juntos la piedra de Hipólito podemos viajar en el espacio.",
+                },
+                {
+                  personaje: "Sara",
+                  texto: "¡Entonces probemos tocar la piedra de Hipólito!",
+                },
+              ],
+              continuar: "viaje_magico_final",
+              progreso: "Descubriendo la magia",
+            },
+
+            viaje_magico_final: {
+              tipo: "final",
+              fondo: "fondo-magico",
+              titulo: "¡GUAUU! - El Gran Viaje",
+              texto:
+                "Sara: En este lugar creció Hipólito, nos quedaremos un tiempo con él.",
+              mensajeFinal:
+                "Querido lectojugador, no te preocupes podes continuar explorando otros posibles finales.",
+              progreso: "Final - Viaje mágico exitoso",
+            },
+
+            volver_biblioteca: {
+              tipo: "final",
+              fondo: "fondo-biblioteca",
+              titulo: "De vuelta a la biblioteca",
+              texto:
+                "Decidimos volver a la biblioteca para buscar más información sobre nuestro querido Hipólito.",
+              mensajeFinal: "A veces, la mejor aventura es seguir aprendiendo.",
+              progreso: "Final - Vuelta a los libros",
+            },
+          };
+
+          this.inicializar();
+        }
+
+        inicializar() {
+          // Configurar eventos
+          this.indicadorClick.addEventListener("click", (e) => {
+            e.stopPropagation();
+            this.avanzarSecuencia();
+          });
+
+          this.pantalla.addEventListener("click", (e) => {
+            // Solo avanzar si se hace clic en áreas específicas y no hay decisiones activas
+            const seccionActual = this.obtenerSeccionActual();
+            if (
+              seccionActual &&
+              (seccionActual.tipo === "decision" ||
+                seccionActual.tipo === "final")
+            ) {
+              return; // No hacer nada si es una decisión o final
+            }
+
+            if (
+              e.target === this.pantalla ||
+              e.target === this.contenidoTexto ||
+              e.target.classList.contains("texto-narrativo") ||
+              e.target.classList.contains("dialogo")
+            ) {
+              this.avanzarSecuencia();
+            }
+          });
+
+          // Eventos de teclado
+          document.addEventListener("keydown", (e) => {
+            const seccionActual = this.obtenerSeccionActual();
+            if (
+              seccionActual &&
+              (seccionActual.tipo === "decision" ||
+                seccionActual.tipo === "final")
+            ) {
+              return; // No hacer nada si es una decisión o final
+            }
+
+            if (
+              e.code === "Space" ||
+              e.code === "Enter" ||
+              e.code === "ArrowRight"
+            ) {
+              e.preventDefault();
+              this.avanzarSecuencia();
+            }
+          });
+
+          console.log("🐉 Cuento secuencial de Hipólito iniciado");
+        }
+
+        avanzarSecuencia() {
+          // Verificar si está bloqueado
+          if (this.bloqueado) {
+            console.log("🚫 Avance bloqueado temporalmente");
+            return;
+          }
+
+          const seccionActual = this.obtenerSeccionActual();
+          console.log(
+            "🔍 Secuencia actual antes de avanzar:",
+            this.secuenciaActual,
+            seccionActual
+          );
+
+          // Si es una decisión, no avanzar automáticamente
+          if (seccionActual && seccionActual.tipo === "decision") {
+            console.log("⏸️ No avanzar - es una decisión");
+            return;
+          }
+
+          // Si es un final, no avanzar
+          if (seccionActual && seccionActual.tipo === "final") {
+            console.log("⏸️ No avanzar - es un final");
+            return;
+          }
+
+          // Si tiene diálogos múltiples, manejar secuencialmente
+          if (
+            seccionActual &&
+            seccionActual.tipo === "dialogo_multiple" &&
+            seccionActual._dialogoIndex !== undefined
+          ) {
+            console.log("📚 Avanzando diálogo múltiple");
+            this.avanzarDialogoMultiple(seccionActual);
+            return;
+          }
+
+          // Avanzar a la siguiente secuencia
+          console.log(
+            "🔍 Tipo de secuenciaActual:",
+            typeof this.secuenciaActual,
+            "Valor:",
+            this.secuenciaActual
+          );
+          if (typeof this.secuenciaActual === "number") {
+            // Para secuencias numeradas, verificar si la siguiente existe
+            const siguienteNumero = this.secuenciaActual + 1;
+            console.log("🔢 Buscando secuencia:", siguienteNumero);
+            if (this.secuencias[siguienteNumero]) {
+              console.log(
+                "✅ Secuencia encontrada, avanzando a:",
+                siguienteNumero
+              );
+              this.secuenciaActual = siguienteNumero;
+            } else {
+              console.log(
+                "❌ No hay más secuencias numeradas después de:",
+                this.secuenciaActual
+              );
+              return;
+            }
+          } else {
+            // Si es una secuencia con nombre, buscar su continuación
+            console.log(
+              "🏷️ Procesando secuencia con nombre:",
+              this.secuenciaActual
+            );
+            const seccion = this.secuencias[this.secuenciaActual];
+            if (seccion && seccion.continuar) {
+              console.log(
+                "🏷️ Avanzando a secuencia con nombre:",
+                seccion.continuar
+              );
+              this.secuenciaActual = seccion.continuar;
+            } else {
+              console.log("❌ No hay más secuencias");
+              return;
+            }
+          }
+
+          this.mostrarSecuencia();
+        }
+
+        irASecuencia(destino) {
+          console.log(
+            "🎯 irASecuencia llamado con destino:",
+            destino,
+            "tipo:",
+            typeof destino
+          );
+          // Bloquear temporalmente para evitar conflictos
+          this.bloqueado = true;
+
+          // Pequeño delay para evitar conflictos con eventos automáticos
+          setTimeout(() => {
+            console.log("⏰ Ejecutando irASecuencia después del delay");
+            // Asegurar que los números sean números
+            this.secuenciaActual =
+              typeof destino === "string" && !isNaN(destino)
+                ? parseInt(destino)
+                : destino;
+            console.log(
+              "🔄 secuenciaActual establecida como:",
+              this.secuenciaActual,
+              "tipo:",
+              typeof this.secuenciaActual
+            );
+            this.mostrarSecuencia();
+
+            // Desbloquear después de mostrar la secuencia
+            setTimeout(() => {
+              this.bloqueado = false;
+              console.log("🔓 Sistema desbloqueado");
+            }, 500);
+          }, 100);
+        }
+
+        obtenerSeccionActual() {
+          return this.secuencias[this.secuenciaActual];
+        }
+
+        mostrarSecuencia() {
+          const seccion = this.obtenerSeccionActual();
+
+          if (!seccion) {
+            console.log("Secuencia no encontrada:", this.secuenciaActual);
+            return;
+          }
+
+          // Actualizar progreso
+          this.progreso.textContent = `📖 ${seccion.progreso || "Cuento"}`;
+
+          // Cambiar fondo y posicionamiento
+          let clasesPantalla = `cuento-pantalla ${
+            seccion.fondo || "fondo-lluvia"
+          }`;
+
+          // Centrar para introducciones, finales y títulos especiales
+          if (
+            seccion.tipo === "introduccion" ||
+            seccion.tipo === "final" ||
+            seccion.titulo
+          ) {
+            clasesPantalla += " pantalla-centrada";
+          }
+
+          this.pantalla.className = clasesPantalla;
+
+          // Limpiar personajes anteriores y mostrar nuevos
+          this.limpiarPersonajes();
+          this.mostrarPersonajesSegunSecuencia(this.secuenciaActual);
+
+          // Generar contenido
+          let html = "";
+
+          if (seccion.titulo) {
+            html += `<h1 class="titulo-cuento">${seccion.titulo}</h1>`;
+          }
+
+          if (seccion.tipo === "dialogo") {
+            html += `
+              <div class="dialogo">
+                <span class="personaje">${seccion.personaje}:</span>
+                ${seccion.texto}
+              </div>
+            `;
+          } else if (seccion.tipo === "dialogo_multiple") {
+            seccion._dialogoIndex = seccion._dialogoIndex || 0;
+            const dialogoActual = seccion.dialogos[seccion._dialogoIndex];
+            html += `
+              <div class="dialogo">
+                <span class="personaje">${dialogoActual.personaje}:</span>
+                ${dialogoActual.texto}
+              </div>
+            `;
+          } else if (seccion.tipo === "decision") {
+            if (seccion.personaje) {
+              html += `
+                <div class="dialogo">
+                  <span class="personaje">${seccion.personaje}:</span>
+                  ${seccion.texto}
+                </div>
+              `;
+            } else {
+              html += `<div class="decision-titulo">${seccion.texto}</div>`;
+            }
+
+            html += `<div class="decision-container"><div class="botones-decision">`;
+            seccion.opciones.forEach((opcion) => {
+              // Determinar si el destino es un número o string para el onclick
+              const destinoParam =
+                typeof opcion.destino === "number"
+                  ? opcion.destino
+                  : `'${opcion.destino}'`;
+              html += `
+                <button class="btn-decision" onclick="cuento.irASecuencia(${destinoParam})">
+                  ${opcion.texto}
+                </button>
+              `;
+            });
+            html += `</div></div>`;
+          } else if (seccion.tipo === "final") {
+            html += `
+              <div class="texto-narrativo">${seccion.texto}</div>
+              ${
+                seccion.mensajeFinal
+                  ? `<div class="texto-narrativo">${seccion.mensajeFinal}</div>`
+                  : ""
+              }
+              <div class="decision-container">
+                <div class="botones-decision">
+                  <button class="btn-decision" onclick="cuento.reiniciar()">
+                    🔄 Empezar de nuevo
+                  </button>
+                  <button class="btn-decision" onclick="abrirChat()">
+                    👩‍🏫 Hablar con la profesora
+                  </button>
+                </div>
+              </div>
+            `;
+            this.pantalla.classList.add("final-historia");
+          } else {
+            // Para textos narrativos, introducción, y otros tipos
+            if (seccion.personaje) {
+              // Si tiene personaje (como "Narrador"), mostrarlo en formato de diálogo
+              html += `
+                <div class="dialogo">
+                  <span class="personaje">${seccion.personaje}:</span>
+                  ${seccion.texto}
+                </div>
+              `;
+            } else {
+              // Si no tiene personaje, mostrar como texto normal
+              html += `<div class="texto-narrativo${
+                seccion.tipo === "introduccion" ? " texto-centro" : ""
+              }">${seccion.texto}</div>`;
+            }
+          }
+
+          this.contenidoTexto.innerHTML = html;
+
+          // Mostrar/ocultar indicador de clic
+          if (seccion.tipo === "decision" || seccion.tipo === "final") {
+            this.indicadorClick.style.display = "none";
+          } else {
+            this.indicadorClick.style.display = "block";
+
+            // Actualizar texto del indicador para diálogos múltiples
+            if (
+              seccion.tipo === "dialogo_multiple" &&
+              seccion._dialogoIndex < seccion.dialogos.length - 1
+            ) {
+              this.indicadorClick.textContent = "👆 Siguiente diálogo";
+            } else {
+              this.indicadorClick.textContent = "👆 Haz clic para continuar";
+            }
+          }
+
+          // Animación de entrada
+          this.contenidoTexto.style.animation = "none";
+          // Force reflow for animation reset
+          this.contenidoTexto.style.display = "block";
+          this.contenidoTexto.style.animation = "aparecerTexto 0.8s ease-out";
+
+          console.log("Mostrando secuencia:", this.secuenciaActual, seccion);
+        }
+
+        avanzarDialogoMultiple(seccion) {
+          seccion._dialogoIndex++;
+
+          if (seccion._dialogoIndex >= seccion.dialogos.length) {
+            // Terminamos los diálogos, continuar con la historia
+            if (seccion.continuar) {
+              this.secuenciaActual = seccion.continuar;
+              this.mostrarSecuencia();
+            }
+          } else {
+            // Mostrar siguiente diálogo
+            this.mostrarSecuencia();
+          }
+        }
+
+        reiniciar() {
+          this.secuenciaActual = 0;
+          this.pantalla.classList.remove("final-historia");
+
+          // Resetear índices de diálogos múltiples
+          Object.values(this.secuencias).forEach((seccion) => {
+            if (seccion && seccion._dialogoIndex !== undefined) {
+              delete seccion._dialogoIndex;
+            }
+          });
+
+          this.limpiarPersonajes();
+          this.mostrarSecuencia();
+        }
+
+        // ===== FUNCIONES DE PERSONAJES =====
+        limpiarPersonajes() {
+          const personajesExistentes =
+            this.pantalla.querySelectorAll(".personaje-imagen");
+          personajesExistentes.forEach((img) => img.remove());
+        }
+
+        crearPersonaje(src, claseCSS, delay = 0) {
+          setTimeout(() => {
+            const img = document.createElement("img");
+            img.src = `../assets/imagenes/PERSONAJES/${src}`;
+            img.className = `personaje-imagen ${claseCSS}`;
+            img.style.animationDelay = `${delay}ms`;
+            this.pantalla.appendChild(img);
+          }, delay);
+        }
+
+        mostrarPersonajesSegunSecuencia(secuencia) {
+          // Mapear secuencias a personajes específicos
+          const personajesPorSecuencia = {
+            // Inicio lluvioso - Hipólito bebé aparece
+            0: () => {
+              this.crearPersonaje("perro bebe.png", "hipolito-bebe", 800);
+            },
+
+            // Decisión de adoptarlo - Sara y Benjamín contentos
+            decision_adopcion: () => {
+              this.crearPersonaje("sara feliz.png", "sara-feliz", 500);
+              this.crearPersonaje("jeremias feliz.png", "benjamin-feliz", 700);
+              this.crearPersonaje("perro bebe.png", "hipolito-bebe", 600);
+            },
+
+            // Lo adoptamos - familia feliz
+            adopcion: () => {
+              this.crearPersonaje("sara feliz.png", "sara-feliz", 300);
+              this.crearPersonaje("jeremias feliz.png", "benjamin-feliz", 500);
+              this.crearPersonaje("hipo feliz.png", "hipolito-feliz", 700);
+              this.crearPersonaje("mariposas living 1.png", "mariposas", 1000);
+            },
+
+            // Nombres para Hipólito - proceso de elección
+            nombres: () => {
+              this.crearPersonaje(
+                "sara sorprendida.png",
+                "sara-sorprendida",
+                400
+              );
+              this.crearPersonaje(
+                "jeremias sorprendido.png",
+                "benjamin-sorprendido",
+                600
+              );
+              this.crearPersonaje(
+                "hipo sorprendido.png",
+                "hipolito-sorprendido",
+                500
+              );
+            },
+
+            // Hipólito es el nombre perfecto
+            hipolito_nombre: () => {
+              this.crearPersonaje("sara feliz.png", "sara-feliz", 300);
+              this.crearPersonaje("jeremias feliz.png", "benjamin-feliz", 500);
+              this.crearPersonaje(
+                "perro dragon adulto frente.png",
+                "hipolito-adulto",
+                700
+              );
+              this.crearPersonaje("mariposas living 2.png", "mariposas", 900);
+            },
+
+            // Mapa de las islas - momento contemplativo
+            mapa_islas: () => {
+              this.crearPersonaje(
+                "niñes de espalda 2.png",
+                "ninos-espalda",
+                600
+              );
+              this.crearPersonaje("hipo triste.png", "hipolito-triste", 800);
+            },
+
+            // Búsqueda de información - en casa investigando
+            busqueda_info: () => {
+              this.crearPersonaje(
+                "sara sorprendida.png",
+                "sara-sorprendida",
+                400
+              );
+              this.crearPersonaje(
+                "jeremias sorprendido.png",
+                "benjamin-sorprendido",
+                600
+              );
+              this.crearPersonaje("hipo feliz.png", "hipolito-feliz", 500);
+              this.crearPersonaje("mariposas living 1.png", "mariposas", 1000);
+            },
+
+            // En la biblioteca
+            biblioteca: () => {
+              this.crearPersonaje(
+                "niñes de espalda .png",
+                "ninos-espalda",
+                500
+              );
+              this.crearPersonaje(
+                "libro solo para mesa ok.png",
+                "libro-mesa",
+                800
+              );
+            },
+
+            // Libro comido - Hipólito travieso
+            libro_comido: () => {
+              this.crearPersonaje("sara triste.png", "sara-triste", 300);
+              this.crearPersonaje(
+                "jeremias triste.png",
+                "benjamin-triste",
+                500
+              );
+              this.crearPersonaje("hipo feliz.png", "hipolito-feliz", 400);
+              this.crearPersonaje("libro roto.png", "libro-roto", 700);
+            },
+
+            // Finales especiales
+            ver_mapa: () => {
+              this.crearPersonaje("sara feliz.png", "sara-feliz", 400);
+              this.crearPersonaje("jeremias feliz.png", "benjamin-feliz", 600);
+              this.crearPersonaje(
+                "perro dragon adulto frente.png",
+                "hipolito-adulto",
+                500
+              );
+            },
+
+            iscarotes_final: () => {
+              this.crearPersonaje("iscarotes1.png", "iscarotes", 500);
+              this.crearPersonaje("hipo triste.png", "hipolito-triste", 800);
+            },
+          };
+
+          // Ejecutar la función de personajes si existe para esta secuencia
+          const mostrarPersonajes = personajesPorSecuencia[secuencia];
+          if (mostrarPersonajes) {
+            mostrarPersonajes();
+          }
+        }
+      }
+
+      // Inicializar cuento
+      let cuento;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        cuento = new CuentoSecuencial();
+      });
+
+      // Función para abrir chat educativo
+      function abrirChat() {
+        window.open(
+          "chat-educativo.html",
+          "_blank",
+          "width=900,height=700,scrollbars=yes,resizable=yes"
+        );
+      }
+    </script>
+  </body>
+</html>

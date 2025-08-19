@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🐉 Hipólito, mi perro-dragón - Cuento Interactivo</title>
+    
+    <style>
+      /* ===== PORTADA PRINCIPAL ===== */
+      body {
+        font-family: "Comic Sans MS", "Trebuchet MS", cursive, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+        background-image: url('assets/imagenes/portada principal sin logos.jpg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+      }
+
+      /* Contenedor de botones - posicionado abajo/medio a la izquierda */
+      .botones-portada {
+        position: absolute;
+        bottom: 20%;
+        left: 17%;
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+        z-index: 2;
+        animation: aparecerBotones 1.5s ease-out;
+      }
+
+      @keyframes aparecerBotones {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Estilo de botones */
+      .btn-portada {
+        background: #1c26274d;
+        border: solid 1px #0000004d;
+        border-radius: 100%;
+        padding: 20px 40px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: inherit;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: 70px;
+      }
+
+      .btn-portada:hover {
+        transform: translateY(-5px);
+        background: #344647;
+      }
+
+      .btn-portada:active {
+        transform: translateY(-2px);
+      }
+
+      /* Botón de la maestra virtual */
+      .btn-maestra {
+        background: #b4a89c5d;
+        border-color: #81797050;
+      }
+
+      .btn-maestra:hover {
+        background: #c5b8ab;
+      }
+
+      /* Iconos de botones */
+      .btn-icon {
+        font-size: 1.8rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .botones-portada {
+          left: 5%;
+          bottom: 25%;
+          gap: 25px;
+        }
+        
+        .btn-portada {
+          font-size: 1.4rem;
+          padding: 18px 35px;
+        }
+        
+        .btn-icon {
+          font-size: 1.6rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .botones-portada {
+          left: 5%;
+          bottom: 20%;
+          gap: 20px;
+        }
+        
+        .btn-portada {
+          font-size: 1.2rem;
+          padding: 15px 30px;
+        }
+        
+        .btn-icon {
+          font-size: 1.4rem;
+        }
+      }
+
+      /* Animación de entrada de botones */
+      .btn-portada:nth-child(1) {
+        animation: aparecerBoton 1s ease-out 0.5s both;
+      }
+
+      .btn-portada:nth-child(2) {
+        animation: aparecerBoton 1s ease-out 0.7s both;
+      }
+
+      @keyframes aparecerBoton {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Solo botones, sin texto -->
+    <div class="botones-portada">
+      <a href="www/cuento-secuencial.html" class="btn-portada">
+        <span class="btn-icon">📖</span>
+      </a>
+      
+      <a href="www/chat-educativo.html" class="btn-portada btn-maestra">
+        <span class="btn-icon">👩‍🏫</span>
+      </a>
+    </div>
+  </body>
+</html>
+

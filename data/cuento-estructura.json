@@ -1,0 +1,501 @@
+{
+    "estructura": {
+        "inicio": {
+            "id": "inicio",
+            "titulo": "El encuentro",
+            "texto": "Esta historia comenzó un día de lluvia, cuando la ciudad estaba colapsada. En la puerta de nuestra casa apareció una bolita blanca de plumas y pelos.",
+            "dialogo": [
+                {
+                    "personaje": "Sara",
+                    "texto": "Benja, mirá lo que encontré."
+                },
+                {
+                    "personaje": "Benjamin",
+                    "texto": "¿Es un gatito?"
+                },
+                {
+                    "personaje": "Sara",
+                    "texto": "No sé ¿capaz un perrito?"
+                },
+                {
+                    "personaje": "Benjamin",
+                    "texto": "Pero tiene alas ¿será un animal mitológico?"
+                }
+            ],
+            "decision": {
+                "pregunta": "¿Qué hacemos?",
+                "opciones": [
+                    {
+                        "id": 1,
+                        "texto": "Lo adoptamos",
+                        "destino": "adopcion"
+                    },
+                    {
+                        "id": 2,
+                        "texto": "Seguimos con nuestra vida",
+                        "destino": "final_perdido"
+                    }
+                ]
+            }
+        },
+        "adopcion": {
+            "id": "adopcion",
+            "titulo": "La adopción",
+            "texto": "Sara: Me parece una excelente idea.",
+            "dialogo": [
+                {
+                    "personaje": "Benjamin",
+                    "texto": "¿Cómo lo nombramos?"
+                }
+            ],
+            "decision": {
+                "pregunta": "¿Qué nombre le ponemos?",
+                "opciones": [
+                    {
+                        "id": 3,
+                        "texto": "Falkor",
+                        "destino": "nombre_falkor"
+                    },
+                    {
+                        "id": 4,
+                        "texto": "Adriano",
+                        "destino": "nombre_adriano"
+                    },
+                    {
+                        "id": 5,
+                        "texto": "Hipólito",
+                        "destino": "nombre_hipolito"
+                    }
+                ]
+            }
+        },
+        "final_perdido": {
+            "id": "final_perdido",
+            "titulo": "Oportunidad perdida",
+            "texto": "Te has perdido la oportunidad de conocer una historia llena de aventuras.",
+            "esFinal": true,
+            "tipoFinal": "malo"
+        },
+        "nombre_falkor": {
+            "id": "nombre_falkor",
+            "titulo": "¿Falkor?",
+            "dialogo": [
+                {
+                    "personaje": "Sara",
+                    "texto": "Se parece a Falkor. Falkor es un dragón blanco de la suerte. Uno de los personajes más conocidos de La historia sin fin de Michael Ende."
+                },
+                {
+                    "personaje": "Benjamin",
+                    "texto": "Me encanta ese libro. Pero no, no es un nombre adecuado."
+                }
+            ],
+            "continua": "busqueda_informacion"
+        },
+        "nombre_adriano": {
+            "id": "nombre_adriano",
+            "titulo": "¿Adriano?",
+            "dialogo": [
+                {
+                    "personaje": "Sara",
+                    "texto": "Mmm Adriano?? Adriano fue un emperador romano conocido por gobernar con justicia y promover la paz."
+                },
+                {
+                    "personaje": "Benjamin",
+                    "texto": "No, no me gusta. él es un perrito muy chiquito."
+                }
+            ],
+            "continua": "busqueda_informacion"
+        },
+        "nombre_hipolito": {
+            "id": "nombre_hipolito",
+            "titulo": "¡Hipólito!",
+            "dialogo": [
+                {
+                    "personaje": "Sara",
+                    "texto": "Hipólito, el perro dragón."
+                },
+                {
+                    "personaje": "Benjamin",
+                    "texto": "Siiii, mi perro-dragón."
+                },
+                {
+                    "personaje": "Sara",
+                    "texto": "Es un nombre adecuado para un perro-dragón de alas blancas con destellos dorados, patas grandes y pesadas para aterrizar de grandes vuelos. La cara cansada de viejito sabio y las ganas de un niño chiquito."
+                }
+            ],
+            "continua": "mapa_islas"
+        },
+        "mapa_islas": {
+            "id": "mapa_islas",
+            "titulo": "El mapa de las Siete Islas",
+            "texto": "La Antigua república de las siete pequeñas islas es una zona geográfica perdida y olvidada en el mapa. Tal como su nombre lo indica, está compuesta por siete islas conectadas por largos puentes.",
+            "descripcionLarga": "Las distancias entre una y otra se pueden recorrer con botes. La vida en La Antigua república de las siete pequeñas islas es difícil, toda tarea requiere mucho esfuerzo físico. Las islas se encuentran aisladas y crece poca vegetación. Los días son fríos y con mucho viento.",
+            "informacionAdicional": {
+                "isla2": "Es la más pequeña, pero constituye un punto estratégico para ingresar al islote.",
+                "isla3": "En esta isla conviven las primeras casas-cuevas realizadas en piedra y las nuevas construcciones.",
+                "isla4": "Acá crecen las verduras y frutas que permiten alimentar a la población.",
+                "isla6": "Isla volcánica con grandes erupciones.",
+                "isla7": "Territorio fértil con grandes cuevas para esconderse."
+            },
+            "continua": "busqueda_informacion"
+        },
+        "busqueda_informacion": {
+            "id": "busqueda_informacion",
+            "titulo": "Buscando respuestas",
+            "dialogo": [
+                {
+                    "personaje": "Sara",
+                    "texto": "Nuestra casa es una pista de aterrizaje porque Hipólito está aprendiendo a volar."
+                },
+                {
+                    "personaje": "Benjamin",
+                    "texto": "También hay mariposas azules por todos lados que le dan besitos en la nariz."
+                },
+                {
+                    "personaje": "Sara",
+                    "texto": "Hipólito tiene una vieja cicatriz de tres puntas cerca del cuello, entre la cabeza y las alas. Con mi hermano decidimos averiguar su historia."
+                }
+            ],
+            "decision": {
+                "pregunta": "¿Dónde podemos buscar información?",
+                "opciones": [
+                    {
+                        "id": 6,
+                        "texto": "Preguntar a una vecina",
+                        "destino": "vecina"
+                    },
+                    {
+                        "id": 7,
+                        "texto": "Ir a la biblioteca",
+                        "destino": "biblioteca"
+                    },
+                    {
+                        "id": 8,
+                        "texto": "Buscar en Internet",
+                        "destino": "internet"
+                    }
+                ]
+            }
+        },
+        "vecina": {
+            "id": "vecina",
+            "titulo": "La vecina no está",
+            "texto": "No encontramos a la vecina en su casa. Seguramente fue a hacer las compras.",
+            "continua": "biblioteca"
+        },
+        "biblioteca": {
+            "id": "biblioteca",
+            "titulo": "En la biblioteca",
+            "texto": "Fuimos a la biblioteca y encontramos en un viejo libro que tenía por título Grimorio de animales fantásticos, descubrimos que las marcas de ese tipo podían ser por una razón. Para saber más conviene buscar en el mapa.",
+            "decision": {
+                "pregunta": "¿Qué hacemos?",
+                "opciones": [
+                    {
+                        "id": 9,
+                        "texto": "Ver mapa",
+                        "destino": "mapa_detallado"
+                    },
+                    {
+                        "id": 10,
+                        "texto": "Seguir leyendo",
+                        "destino": "libro_comido"
+                    }
+                ]
+            }
+        },
+        "internet": {
+            "id": "internet",
+            "titulo": "Internet no tiene respuestas",
+            "texto": "En Internet no porque Hipólito es un animal ancestral y esas historias ya quedaron olvidadas en algún libro viejo.",
+            "continua": "biblioteca"
+        },
+        "libro_comido": {
+            "id": "libro_comido",
+            "titulo": "¡Hipólito se comió el libro!",
+            "dialogo": [
+                {
+                    "personaje": "Sara",
+                    "texto": "Hicimos los deberes y cuando volvimos a la cocina… Hipólito se había comido todoooo el libro y también nuestra merienda. ¡Los perros dragones se comen todo lo que encuentran!"
+                }
+            ],
+            "decision": {
+                "pregunta": "¿Qué hacemos?",
+                "opciones": [
+                    {
+                        "id": 11,
+                        "texto": "Armar el libro",
+                        "destino": "libro_armado"
+                    },
+                    {
+                        "id": 7,
+                        "texto": "Volver a la biblioteca",
+                        "destino": "biblioteca_segunda_vez"
+                    }
+                ]
+            }
+        },
+        "libro_armado": {
+            "id": "libro_armado",
+            "titulo": "El libro mágico",
+            "dialogo": [
+                {
+                    "personaje": "Benjamin",
+                    "texto": "Acá dice que si tocamos todos juntos la piedra de Hipólito podemos viajar en el espacio."
+                },
+                {
+                    "personaje": "Sara",
+                    "texto": "¡Entonces probemos tocar la piedra de Hipólito!"
+                }
+            ],
+            "continua": "viaje_magico_1"
+        },
+        "biblioteca_segunda_vez": {
+            "id": "biblioteca_segunda_vez",
+            "titulo": "De vuelta en la biblioteca",
+            "dialogo": [
+                {
+                    "personaje": "Benjamin",
+                    "texto": "Vamos a explicarle a la bibliotecaria."
+                },
+                {
+                    "personaje": "Sara",
+                    "texto": "Está bien, seguiremos buscando en otro libro. Decidimos salir a la calle para buscar respuestas."
+                }
+            ],
+            "continua": "hombre_misterioso"
+        },
+        "hombre_misterioso": {
+            "id": "hombre_misterioso",
+            "titulo": "El hombre misterioso",
+            "dialogo": [
+                {
+                    "personaje": "Benjamin",
+                    "texto": "Creo que alguien nos sigue. Escucho unos pasos muy cerca."
+                },
+                {
+                    "personaje": "Sara",
+                    "texto": "Hola"
+                },
+                {
+                    "personaje": "Benjamin",
+                    "texto": "¿Por qué nos sigue?"
+                },
+                {
+                    "personaje": "Hombre misterioso",
+                    "texto": "Yo sé dónde están las respuestas que buscan."
+                },
+                {
+                    "personaje": "Benjamin",
+                    "texto": "Disculpe señor pero es una respuesta extraña."
+                },
+                {
+                    "personaje": "Hombre misterioso",
+                    "texto": "Yo sé todo, conozco todo."
+                },
+                {
+                    "personaje": "Hipólito",
+                    "texto": "(gruñido.)"
+                },
+                {
+                    "personaje": "Hombre misterioso",
+                    "texto": "Vayan a esta dirección: Calle del Sol 456."
+                }
+            ],
+            "decision": {
+                "pregunta": "¿Qué hacemos?",
+                "opciones": [
+                    {
+                        "id": 12,
+                        "texto": "Seguir las instrucciones del hombre misterioso",
+                        "destino": "trampa"
+                    },
+                    {
+                        "id": 13,
+                        "texto": "Volver a casa",
+                        "destino": "vuelta_casa"
+                    }
+                ]
+            }
+        },
+        "trampa": {
+            "id": "trampa",
+            "titulo": "¡Es una trampa!",
+            "dialogo": [
+                {
+                    "personaje": "Sara",
+                    "texto": "Busquemos la dirección"
+                },
+                {
+                    "personaje": "Benjamin",
+                    "texto": "Mirá una librería de artes mágicas."
+                },
+                {
+                    "personaje": "Sara",
+                    "texto": "¿Será la dirección correcta?"
+                },
+                {
+                    "personaje": "Benjamin",
+                    "texto": "Entremos para corroborar"
+                },
+                {
+                    "personaje": "Sara y Benjamin",
+                    "texto": "¡Es una trampa quedamos atrapados! ¡Nadie sabrá dónde estamos! ¡Nunca nos encontrarán!"
+                }
+            ],
+            "esFinal": true,
+            "tipoFinal": "malo"
+        },
+        "vuelta_casa": {
+            "id": "vuelta_casa",
+            "titulo": "Siguiendo el instinto de Hipólito",
+            "dialogo": [
+                {
+                    "personaje": "Sara",
+                    "texto": "Alertados por las señales de Hipólito, seguimos caminando despacito por las calles de la ciudad y no fuimos a la dirección indicada. Decidimos volver a casa y armar el libro."
+                }
+            ],
+            "continua": "libro_armado_final"
+        },
+        "libro_armado_final": {
+            "id": "libro_armado_final",
+            "titulo": "El libro mágico funciona",
+            "dialogo": [
+                {
+                    "personaje": "Benjamin",
+                    "texto": "Acá dice que si tocamos todos juntos la piedra de Hipólito podemos viajar en el espacio."
+                },
+                {
+                    "personaje": "Sara",
+                    "texto": "¡Entonces probemos tocar la piedra de Hipólito!"
+                }
+            ],
+            "continua": "viaje_magico_2"
+        },
+        "viaje_magico_1": {
+            "id": "viaje_magico_1",
+            "titulo": "¡GUAUU! - Primer viaje",
+            "dialogo": [
+                {
+                    "personaje": "Sara",
+                    "texto": "En este lugar creció Hipólito, nos quedaremos un tiempo con él."
+                }
+            ],
+            "esFinal": true,
+            "tipoFinal": "bueno"
+        },
+        "viaje_magico_2": {
+            "id": "viaje_magico_2",
+            "titulo": "¡GUAUU! - Segundo viaje",
+            "dialogo": [
+                {
+                    "personaje": "Sara",
+                    "texto": "En este lugar creció Hipólito, nos quedaremos un tiempo con él."
+                }
+            ],
+            "esFinal": true,
+            "tipoFinal": "bueno"
+        },
+        "mapa_detallado": {
+            "id": "mapa_detallado",
+            "titulo": "Explorando el mapa",
+            "texto": "GUAUU",
+            "dialogo": [
+                {
+                    "personaje": "Sara",
+                    "texto": "En este lugar creció Hipólito, nos quedaremos un tiempo con él."
+                }
+            ],
+            "esFinal": true,
+            "tipoFinal": "bueno"
+        }
+    },
+    "personajes": {
+        "hipolito": {
+            "nombre": "Hipólito",
+            "descripcion": "Perro-dragón de alas blancas con destellos dorados",
+            "caracteristicas": [
+                "Patas grandes y pesadas para aterrizar",
+                "Cara cansada de viejito sabio",
+                "Ganas de un niño chiquito",
+                "Cicatriz de tres puntas en el cuello",
+                "Ojos marrones que a veces se vuelven color fuego"
+            ],
+            "familia": {
+                "abuelo": "Falkor",
+                "padre": "Anaris"
+            },
+            "habilidades": [
+                "Volar largas distancias",
+                "Ladrar con la voz de los ancestros",
+                "Instinto para detectar peligros"
+            ]
+        },
+        "sara": {
+            "nombre": "Sara",
+            "descripcion": "Una de las protagonistas, hermana de Benjamín",
+            "personalidad": [
+                "Observadora",
+                "Creativa",
+                "Cariñosa",
+                "Intuitiva"
+            ]
+        },
+        "benjamin": {
+            "nombre": "Benjamín",
+            "descripcion": "Uno de los protagonistas, hermano de Sara",
+            "personalidad": [
+                "Curioso",
+                "Valiente",
+                "Responsable",
+                "Aventurero"
+            ]
+        },
+        "iscarotes": {
+            "nombre": "Iscarotes",
+            "descripcion": "Los antagonistas que gobiernan las Siete Islas",
+            "caracteristicas": [
+                "Devotos del sol y del fuego destructor",
+                "Régimen totalitario",
+                "Destructores del medio ambiente",
+                "Esclavizadores de perros-dragón"
+            ]
+        }
+    },
+    "lugares": {
+        "cordoba": {
+            "nombre": "Córdoba",
+            "descripcion": "Ciudad argentina donde viven Sara y Benjamín",
+            "elementos": ["Casa familiar", "Biblioteca", "Calles de la ciudad"]
+        },
+        "siete_islas": {
+            "nombre": "Antigua República de las Siete Islas",
+            "descripcion": "Lugar de origen de los perros-dragón",
+            "historia": "Antes era un paraíso, ahora está destruido por los Iscarotes",
+            "islas": {
+                "isla2": "La más pequeña, punto estratégico",
+                "isla3": "Casas-cuevas de piedra y construcciones nuevas",
+                "isla4": "Donde crecen frutas y verduras",
+                "isla6": "Isla volcánica con erupciones",
+                "isla7": "Territorio fértil con grandes cuevas"
+            }
+        },
+        "estrecho_gargolas": {
+            "nombre": "Estrecho de las Gárgolas",
+            "descripcion": "Espacio peligroso entre acantilados",
+            "caracteristicas": [
+                "Mar bravo que arrastra todo",
+                "Destruye embarcaciones",
+                "Solo los perros-dragón pueden pasarlo",
+                "Cuevas en los bordes del acantilado"
+            ]
+        }
+    },
+    "temas": {
+        "adopcion_rescate": "La importancia de ayudar a los animales necesitados",
+        "medio_ambiente": "Cómo la destrucción ambiental afecta a todos los seres vivos",
+        "justicia": "La lucha entre el bien y el mal, la opresión y la libertad",
+        "familia_amistad": "Los vínculos que se crean más allá de la sangre",
+        "identidad": "La búsqueda de los orígenes y la pertenencia",
+        "intuicion": "La importancia de confiar en nuestros instintos"
+    }
+}

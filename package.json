@@ -1,0 +1,62 @@
+{
+    "name": "hipolito-perro-dragon",
+    "version": "2.0.0",
+    "description": "Cuento digital interactivo con chatbot educativo offline para comprensión lectora infantil",
+    "main": "inicio.html",
+    "scripts": {
+        "start": "http-server -p ${PORT:-8080} -a 0.0.0.0 -c-1 --cors",
+        "serve": "http-server -p 8080 -c-1",
+        "build": "echo 'PWA lista para despliegue'",
+        "railway:deploy": "npm start",
+        "pwa-builder": "start https://www.pwabuilder.com/",
+        "capacitor:init": "npx cap init \"Hipólito Chat Educativo\" \"com.hipolito.educativo\"",
+        "capacitor:add-android": "npx cap add android",
+        "capacitor:copy": "npx cap copy",
+        "capacitor:sync": "npx cap sync",
+        "capacitor:build": "npx cap build android",
+        "capacitor:open": "npx cap open android",
+        "android:dev": "npm run capacitor:sync && npm run capacitor:open",
+        "icons:generate": "echo 'Ejecuta: magick assets/iconos/favicon.svg -resize 192x192 assets/iconos/icon-192x192.png'",
+        "test:pwa": "echo 'Abre http://localhost:8080/inicio.html para probar PWA'"
+    },
+    "keywords": [
+        "pwa",
+        "educativo",
+        "chatbot",
+        "niños",
+        "cuento",
+        "ia",
+        "offline",
+        "android"
+    ],
+    "author": "Proyecto Hipólito",
+    "license": "MIT",
+    "devDependencies": {
+        "http-server": "^14.1.1"
+    },
+    "dependencies": {
+        "http-server": "^14.1.1"
+    },
+    "optionalDependencies": {
+        "@capacitor/cli": "^5.0.0",
+        "@capacitor/core": "^5.0.0",
+        "@capacitor/android": "^5.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "local"
+    },
+    "pwa": {
+        "name": "Hipólito, mi perro-dragón",
+        "short_name": "Hipólito",
+        "start_url": "./inicio.html",
+        "display": "standalone",
+        "theme_color": "#74b9ff",
+        "background_color": "#74b9ff",
+        "orientation": "portrait-primary"
+    },
+    "capacitor": {
+        "appId": "com.hipolito.educativo",
+        "appName": "Hipólito Chat Educativo"
+    }
+}

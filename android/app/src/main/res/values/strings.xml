@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Hipólito Chat Educativo</string>
+    <string name="title_activity_main">Hipólito Chat Educativo</string>
+    <string name="package_name">com.hipolito.educativo</string>
+    <string name="custom_url_scheme">com.hipolito.educativo</string>
+</resources>
