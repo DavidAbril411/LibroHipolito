@@ -45,6 +45,7 @@ npm start
 ## 🎯 Uso Educativo
 
 Ideal para niños de 6-12 años que quieran:
+
 - Leer de forma interactiva
 - Practicar comprensión lectora
 - Aprender sin presión de evaluación

@@ -158,7 +158,7 @@ class ProfesoraVirtual {
             // Responder con entusiasmo y hacer la primera pregunta
             const confirmacion = "¡Perfecto! Me encanta tu entusiasmo. Empecemos entonces... 🎉\n\n";
             const primeraPregunta = this.hacerSiguientePregunta();
-            
+
             this.conversacion.push({
                 profesora: confirmacion + primeraPregunta,
                 timestamp: new Date()
@@ -185,11 +185,11 @@ class ProfesoraVirtual {
 
         // Evaluar si la respuesta es correcta
         let respuestaProfesora;
-        
+
         // Si la respuesta es "no sé" o similar, dar apoyo
         const respuestaLimpia = respuestaEstudiante.toLowerCase().trim();
         const variacionesNoSe = [
-            'nose', 'no se', 'no sé', 'no', 
+            'nose', 'no se', 'no sé', 'no',
             'no me acuerdo', 'no recuerdo', 'no lo recuerdo',
             'no me acuerdo bien', 'no me acuerdo muy bien',
             'no lo sé', 'no lo se', 'nada', 'no idea',
@@ -199,20 +199,20 @@ class ProfesoraVirtual {
             'no estoy segura', 'mmm no', 'ehh no', 'este no',
             'paso', 'siguiente', 'skip'
         ];
-        
-        const esRespuestaNoSe = variacionesNoSe.some(variacion => 
-            respuestaLimpia === variacion || 
+
+        const esRespuestaNoSe = variacionesNoSe.some(variacion =>
+            respuestaLimpia === variacion ||
             respuestaLimpia.includes(variacion) ||
             (variacion.length > 3 && respuestaLimpia.startsWith(variacion))
         );
-        
+
         if (esRespuestaNoSe) {
             // Respuesta "no sé" - dar apoyo sin presión
             respuestaProfesora = "No pasa nada, está bien no recordar todo. Te ayudo: " + this.preguntaActual.respuestaCorrecta.replace(/¡[^!]*!/g, '').trim() + "\n\n" + this.preguntaActual.explicacion;
         } else {
             // Evaluar si la respuesta es realmente correcta
             const evaluacion = this.evaluarRespuesta(respuestaEstudiante);
-            
+
             if (evaluacion.esCorrecta) {
                 // Respuesta correcta - celebrar
                 respuestaProfesora = this.preguntaActual.respuestaCorrecta + "\n\n" + this.preguntaActual.explicacion;
@@ -304,7 +304,7 @@ class ProfesoraVirtual {
             .replace(/[¿?¡!.,]/g, '')
             .replace(/\s+/g, ' ')
             .trim();
-        
+
         const respuestaValidaLimpia = respuestaValida.toLowerCase()
             .replace(/[¿?¡!.,]/g, '')
             .replace(/\s+/g, ' ')
@@ -326,7 +326,7 @@ class ProfesoraVirtual {
         );
 
         const porcentajeCoincidencia = palabrasEncontradas.length / palabrasValidas.length;
-        
+
         // Ser más estricto: necesita al menos 60% de coincidencia
         // Y para respuestas cortas (1-2 palabras), necesita coincidencia exacta
         if (palabrasValidas.length <= 2) {
@@ -424,7 +424,7 @@ class ProfesoraVirtual {
         });
 
         const preguntaLimpia = mensaje.toLowerCase().trim();
-        
+
         // Base de conocimiento sobre el cuento para responder preguntas libres
         let respuesta = "¡Qué buena pregunta! ";
 
