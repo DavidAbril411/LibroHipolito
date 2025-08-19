@@ -1,6 +1,6 @@
 /**
  * Chat Educativo - La Profesora Virtual hace preguntas a los niños
- * Sistema donde la profesora evalúa el conocimiento del cuento
+ * Sistema donde la profesora conversa sobre el conocimiento del cuento
  */
 
 class ChatEducativo {
@@ -106,7 +106,7 @@ class ChatEducativo {
             // Procesar respuesta con la profesora virtual
             const respuestaProfesora = await this.profesora.procesarRespuesta(respuesta);
 
-            // Ocultar indicador de evaluación
+            // Ocultar indicador de conversación
             this.ocultarEvaluando();
 
             // Mostrar respuesta de la profesora
@@ -184,7 +184,7 @@ class ChatEducativo {
     }
 
     /**
-     * Oculta indicador de evaluación
+     * Oculta indicador de conversación
      */
     ocultarEvaluando() {
         this.esperandoRespuesta = false;

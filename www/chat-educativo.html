@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>👩‍🏫 Profesora Virtual - Evaluación del Cuento</title>
+    <title>👩‍🏫 Profesora Virtual - Conversemos del Cuento</title>
 
     <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#e17055" />
@@ -211,7 +211,7 @@
         border: 2px solid #f5c6cb;
       }
 
-      /* Animación de evaluación */
+      /* Animación de conversación */
       .mensaje.evaluando .contenido {
         background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
         color: white;
@@ -405,7 +405,7 @@
       <!-- Header -->
       <div class="chat-header">
         <h1>👩‍🏫 Profesora Virtual</h1>
-        <p>Evaluación sobre el cuento de Hipólito</p>
+        <p>Conversemos sobre el cuento de Hipólito</p>
       </div>
 
       <!-- Progreso ELIMINADO completamente -->
@@ -415,7 +415,7 @@
       <!-- Estado de conexión -->
       <div id="estado-conexion" class="estado-conexion">
         <span class="icono">🔄</span>
-        <span class="texto">Preparando evaluación...</span>
+        <span class="texto">Preparando nuestra charla...</span>
       </div>
 
       <!-- Mensajes -->
@@ -435,7 +435,7 @@
       <!-- Controles adicionales -->
       <div class="controles-adicionales">
         <button class="btn-control" id="btn-nueva-sesion">
-          🔄 Nueva Evaluación
+          🔄 Nueva Conversación
         </button>
         <button class="btn-control" onclick="window.close()">
           🏠 Volver al Cuento
@@ -469,7 +469,7 @@
             estadoConexion.className = "estado-conexion error";
             estadoConexion.innerHTML = `
               <span class="icono">❌</span>
-              <span class="texto">Error al inicializar la evaluación</span>
+              <span class="texto">Error al inicializar la conversación</span>
             `;
           }
         }
