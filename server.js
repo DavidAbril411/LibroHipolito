@@ -37,23 +37,37 @@ const server = http.createServer((req, res) => {
 
   let filePath = req.url === '/' ? '/index.html' : req.url;
   
+  // Decodificar URL para manejar espacios y caracteres especiales
+  filePath = decodeURIComponent(filePath);
+  
   // Remove query parameters
   filePath = filePath.split('?')[0];
+  
+  // Asegurarse de que filePath no termine en /
+  if (filePath.endsWith('/') && filePath !== '/') {
+    filePath = filePath.slice(0, -1);
+  }
   
   const fullPath = path.join(__dirname, filePath);
   const ext = path.extname(filePath);
   const contentType = mimeTypes[ext] || 'text/plain';
 
+  console.log(`📄 Solicitando: ${filePath}`);
+  console.log(`🗂️  Ruta completa: ${fullPath}`);
+
   fs.readFile(fullPath, (err, data) => {
     if (err) {
       if (err.code === 'ENOENT') {
+        console.log(`❌ Archivo no encontrado: ${fullPath}`);
         res.writeHead(404, { 'Content-Type': 'text/html' });
         res.end('<h1>404 - Archivo no encontrado</h1>');
       } else {
+        console.log(`💥 Error del servidor: ${err.message}`);
         res.writeHead(500, { 'Content-Type': 'text/html' });
         res.end('<h1>500 - Error del servidor</h1>');
       }
     } else {
+      console.log(`✅ Archivo servido correctamente: ${filePath}`);
       res.writeHead(200, { 
         'Content-Type': contentType,
         'Cache-Control': 'no-cache'
