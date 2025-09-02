@@ -131,11 +131,13 @@
             "texto": "La Antigua república de las siete pequeñas islas es una zona geográfica perdida y olvidada en el mapa. Tal como su nombre lo indica, está compuesta por siete islas conectadas por largos puentes.",
             "descripcionLarga": "Las distancias entre una y otra se pueden recorrer con botes. La vida en La Antigua república de las siete pequeñas islas es difícil, toda tarea requiere mucho esfuerzo físico. Las islas se encuentran aisladas y crece poca vegetación. Los días son fríos y con mucho viento.",
             "informacionAdicional": {
-                "isla2": "Es la más pequeña, pero constituye un punto estratégico para ingresar al islote.",
-                "isla3": "En esta isla conviven las primeras casas-cuevas realizadas en piedra y las nuevas construcciones.",
+                "isla1": "Es la más pequeña, pero constituye un punto estratégico para ingresar al islote.",
+                "isla2": "En esta isla conviven las primeras casas-cuevas realizadas en piedra y las nuevas construcciones.",
+                "isla3": "En esta isla se concentra la mayor parte de la población",
                 "isla4": "Acá crecen las verduras y frutas que permiten alimentar a la población.",
-                "isla6": "Isla volcánica con grandes erupciones.",
-                "isla7": "Territorio fértil con grandes cuevas para esconderse."
+                "isla5": "Isla volcánica con grandes erupciones.",
+                "isla6": "Territorio fértil con grandes cuevas para esconderse.",
+                "isla7": "La más importante a nivel económico, territorio fértil con grandes cuevas para esconderse"
             },
             "continua": "busqueda_informacion"
         },
@@ -397,16 +399,19 @@
         },
         "mapa_detallado": {
             "id": "mapa_detallado",
-            "titulo": "Explorando el mapa",
-            "texto": "GUAUU",
-            "dialogo": [
-                {
-                    "personaje": "Sara",
-                    "texto": "En este lugar creció Hipólito, nos quedaremos un tiempo con él."
-                }
-            ],
-            "esFinal": true,
-            "tipoFinal": "bueno"
+            "titulo": "El mapa de las Siete Islas",
+            "texto": "La Antigua república de las siete pequeñas islas es una zona geográfica perdida y olvidada en el mapa. Tal como su nombre lo indica, está compuesta por siete islas conectadas por largos puentes.",
+            "descripcionLarga": "Las distancias entre una y otra se pueden recorrer con botes. La vida en La Antigua república de las siete pequeñas islas es difícil, toda tarea requiere mucho esfuerzo físico. Las islas se encuentran aisladas y crece poca vegetación. Los días son fríos y con mucho viento.",
+            "informacionAdicional": {
+                "isla1": "Es la más pequeña, pero constituye un punto estratégico para ingresar al islote.",
+                "isla2": "En esta isla conviven las primeras casas-cuevas realizadas en piedra y las nuevas construcciones.",
+                "isla3": "En esta isla se concentra la mayor parte de la población",
+                "isla4": "Acá crecen las verduras y frutas que permiten alimentar a la población.",
+                "isla5": "Isla volcánica con grandes erupciones.",
+                "isla6": "Territorio fértil con grandes cuevas para esconderse.",
+                "isla7": "La más importante a nivel económico, territorio fértil con grandes cuevas para esconderse"
+            },
+            "continua": "busqueda_informacion"
         }
     },
     "personajes": {
